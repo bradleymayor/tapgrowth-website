@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lash Out & Nail It | Whalan NSW</title>
+
+  <meta
+    name="description"
+    content="Lash Out & Nail It - custom nail designs in Whalan, Sydney NSW. Message via Instagram or Facebook to book."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, #ead6c8 0%, transparent 30%),
+        linear-gradient(180deg, #faf6f0 0%, #f3e8df 100%);
+      color: #171717;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 28px 18px 50px;
+    }
+
+    /* LOGO */
+
+    .logo-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow: 0 18px 50px rgba(70, 45, 30, 0.10);
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .logo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 5px 6px 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #866c5c;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 10vw, 60px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 17px;
+    }
+
+    .subtitle {
+      color: #695e57;
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 470px;
+      margin: 0 auto;
+    }
+
+    /* PRICE */
+
+    .price-card {
+      background: #171717;
+      color: #ffffff;
+      border-radius: 26px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+    }
+
+    .price-card small {
+      display: block;
+      color: #d6c4b7;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      margin-bottom: 9px;
+    }
+
+    .price-card p {
+      color: #ddd5cf;
+      line-height: 1.55;
+      font-size: 14px;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    /* BOOKING */
+
+    .booking {
+      margin: 18px 0 42px;
+    }
+
+    .booking-title {
+      text-align: center;
+      font-size: 14px;
+      color: #6e625a;
+      margin-bottom: 15px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-decoration: none;
+      padding: 19px 20px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .instagram {
+      background: #ffffff;
+      color: #171717;
+      border: 1px solid #d8ccc4;
+      box-shadow: 0 8px 24px rgba(80, 55, 40, 0.06);
+    }
+
+    .facebook {
+      background: #171717;
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .button-left {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .icon {
+      width: 39px;
+      height: 39px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: #eee3db;
+      color: #171717;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .facebook .icon {
+      background: #ffffff;
+      color: #171717;
+    }
+
+    .arrow {
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      margin-bottom: 38px;
+    }
+
+    .section-heading {
+      margin-bottom: 18px;
+    }
+
+    .section-heading small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      color: #907768;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 33px;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    .section-heading p {
+      color: #75685f;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-top: 9px;
+    }
+
+    .gallery-single {
+      overflow: hidden;
+      border-radius: 24px;
+      background: #ffffff;
+      padding: 6px;
+      box-shadow: 0 16px 40px rgba(70, 45, 30, 0.12);
+    }
+
+    .gallery-single img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 19px;
+    }
+
+    /* LOCATION */
+
+    .location {
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 25px;
+      padding: 25px;
+      margin-bottom: 32px;
+    }
+
+    .location small {
+      color: #8c7465;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 11px;
+    }
+
+    .location h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 9px 0;
+    }
+
+    .location p {
+      color: #6d625b;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      color: #8b7b70;
+      font-size: 12px;
+      padding: 5px 0 10px;
+    }
+
+    footer strong {
+      color: #171717;
+    }
+
+    @media (max-width: 420px) {
+      .page {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .price-card {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- LOGO -->
+
+    <div class="logo-card">
+      <img
+        src="IMG_1866.jpeg"
+        alt="Lash Out & Nail It logo"
+      >
+    </div>
+
+
+    <!-- INTRO -->
+
+    <section class="hero">
+
+      <span class="eyebrow">
+        Nail Artist • Whalan NSW
+      </span>
+
+      <h1>
+        Lash Out<br>&amp; Nail It
+      </h1>
+
+      <p class="subtitle">
+        Custom nails made to match your style.
+        Bring your inspiration, choose the look you love
+        and make your next set your own.
+      </p>
+
+    </section>
+
+
+    <!-- PRICE -->
+
+    <section class="price-card">
+
+      <small>
+        Nail designs from around
+      </small>
+
+      <div class="price">
+        $60
+      </div>
+
+      <p>
+        Have a design in mind? Send it through when booking.
+        Final pricing may vary depending on the service,
+        length and design.
+      </p>
+
+    </section>
+
+
+    <!-- BOOKING -->
+
+    <section class="booking">
+
+      <p class="booking-title">
+        Message to book your appointment
+      </p>
+
+
+      <a
+        class="button instagram"
+        href="https://www.instagram.com/lashoutandnailit?igsh=bjRmaGZ2aXo2MXAy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-left">
+
+          <span class="icon">
+            ◎
+          </span>
+
+          <span>
+            Book via Instagram
+          </span>
+
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        class="button facebook"
+        href="https://www.facebook.com/61577908204659/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-left">
+
+          <span class="icon">
+            f
+          </span>
+
+          <span>
+            Book via Facebook
+          </span>
+
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </section>
+
+
+    <!-- NAIL PORTFOLIO -->
+
+    <section class="portfolio">
+
+      <div class="section-heading">
+
+        <small>
+          Recent Work
+        </small>
+
+        <h2>
+          Find your next set.
+        </h2>
+
+        <p>
+          A look at some recent designs.
+          Have something different in mind?
+          Send through your inspiration when you book.
+        </p>
+
+      </div>
+
+
+      <div class="gallery-single">
+
+        <img
+          src="IMG_1867.jpeg"
+          alt="Recent nail designs by Lash Out & Nail It"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+
+    <section class="location">
+
+      <small>
+        Location
+      </small>
+
+      <h2>
+        Whalan, Sydney NSW
+      </h2>
+
+      <p>
+        Appointments available.
+        Message Lash Out &amp; Nail It through Instagram
+        or Facebook to enquire and book your next set.
+      </p>
+
+    </section>
+
+
+    <!-- TAPGROWTH -->
+
+    <footer>
+      Smart customer connections by
+      <strong>TapGrowth</strong>
+    </footer>
+
+  </main>
+
+</body>
+</html>
