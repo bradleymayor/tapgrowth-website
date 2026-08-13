@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TapGrowth | NFC Google Review Solutions</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0d10;
+      color: white;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #22262d;
+      background: #0b0d10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 0.8;
+      transform: rotate(-2deg);
+    }
+
+    .logo span {
+      display: block;
+    }
+
+    .nav-button {
+      padding: 11px 17px;
+      background: #6f63ff;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+      padding: 70px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #191c22;
+      color: #cfd3dc;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .purple {
+      color: #8075ff;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 19px;
+      color: #b9bec8;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 21px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6f63ff, #8f63ff);
+    }
+
+    .btn-secondary {
+      border: 1px solid #353941;
+      background: #121419;
+    }
+
+    .product-preview {
+      background: linear-gradient(145deg, #171a20, #101217);
+      border: 1px solid #292d35;
+      border-radius: 30px;
+      min-height: 470px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 35px;
+    }
+
+    .stand {
+      width: 270px;
+      height: 360px;
+      border: 8px solid rgba(255,255,255,.16);
+      border-radius: 20px;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 35px 70px rgba(0,0,0,.45);
+    }
+
+    .stand .logo {
+      font-size: 40px;
+      margin-bottom: 36px;
+    }
+
+    .stand h3 {
+      font-size: 27px;
+      margin-bottom: 5px;
+    }
+
+    .stand p {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .stand .nfc {
+      font-size: 38px;
+      margin-top: 22px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .light {
+      background: #f5f6f8;
+      color: #111318;
+    }
+
+    .section-title {
+      font-size: 42px;
+      letter-spacing: -1.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      color: #6b717c;
+      margin-bottom: 35px;
+      font-size: 17px;
+    }
+
+    .steps,
+    .products,
+    .pricing {
+      display: grid;
+      gap: 20px;
+    }
+
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e1e4ea;
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #6f63ff;
+      color: white;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #676e79;
+    }
+
+    .dark-card {
+      background: #15181d;
+      border: 1px solid #292d34;
+      border-radius: 22px;
+      padding: 28px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 900;
+      margin: 12px 0;
+    }
+
+    .features {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .features li {
+      margin: 9px 0;
+      color: #c7cbd3;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: #37ce7a;
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    .contact {
+      text-align: center;
+      background: #0f1115;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #aeb4bf;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #7d838d;
+      border-top: 1px solid #22262d;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 0;
+      }
+
+      .steps,
+      .products,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .product-preview {
+        min-height: 410px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <div class="logo">
+        <span>Tap</span>
+        <span>Growth</span>
+      </div>
+
+      <a class="nav-button" href="#contact">
+        Get Started
+      </a>
+
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="container">
+    <section class="hero">
+
+      <div>
+
+        <div class="tag">
+          Small Tap. Big Growth.
+        </div>
+
+        <h1>
+          Turn happy customers into
+          <span class="purple">Google reviews.</span>
+        </h1>
+
+        <p>
+          TapGrowth helps local businesses make Google reviews easier
+          using NFC review stands and keychains. Customers simply tap
+          their phone and go straight to your review page.
+        </p>
+
+        <div class="buttons">
+
+          <a class="btn btn-primary" href="#products">
+            View Products
+          </a>
+
+          <a class="btn btn-secondary" href="#how">
+            How It Works
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="product-preview">
+
+        <div class="stand">
+
+          <div class="logo">
+            <span>Tap</span>
+            <span>Growth</span>
+          </div>
+
+          <h3>Tap Here</h3>
+
+          <p>for Google Reviews</p>
+
+          <div class="nfc">
+            ))) ◉
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+
+  <section class="light" id="how">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        How It Works
+      </h2>
+
+      <p class="section-sub">
+        Getting more reviews shouldn't be complicated.
+      </p>
+
+      <div class="steps">
+
+        <div class="card">
+
+          <div class="number">
+            1
+          </div>
+
+          <h3>
+            Customer taps
+          </h3>
+
+          <p>
+            They tap their phone against your TapGrowth NFC stand or keychain.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="number">
+            2
+          </div>
+
+          <h3>
+            Google opens
+          </h3>
+
+          <p>
+            The customer is taken directly to your Google review page.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="number">
+            3
+          </div>
+
+          <h3>
+            Review submitted
+          </h3>
+
+          <p>
+            They can quickly rate their experience and leave genuine feedback.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="light" id="products">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        TapGrowth Products
+      </h2>
+
+      <p class="section-sub">
+        Simple tools designed for local businesses.
+      </p>
+
+
+      <div class="products">
+
+        <div class="card">
+
+          <h3>
+            NFC Google Review Stand
+          </h3>
+
+          <p>
+            A professional counter display for gyms, cafés, salons,
+            restaurants, mechanics and other local businesses.
+          </p>
+
+          <ul class="features">
+            <li>Programmed to your Google review page</li>
+            <li>No app required</li>
+            <li>Works with modern smartphones</li>
+            <li>Ready to use</li>
+          </ul>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>
+            NFC Review Keychain
+          </h3>
+
+          <p>
+            A portable review tool designed for tradies, mobile businesses
+            and staff who interact with customers away from a front counter.
+          </p>
+
+          <ul class="features">
+            <li>Compact and reusable</li>
+            <li>Perfect for tradies</li>
+            <li>Tap anywhere</li>
+            <li>Custom setup available</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="pricing">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Simple Pricing
+      </h2>
+
+      <p class="section-sub">
+        Start with one. Add more as your business grows.
+      </p>
+
+
+      <div class="pricing">
+
+
+        <div class="dark-card">
+
+          <h3>
+            Google Review Stand
+          </h3>
+
+          <div class="price">
+            $99
+          </div>
+
+          <p>
+            One-time purchase
+          </p>
+
+          <ul class="features">
+            <li>Acrylic stand</li>
+            <li>Programmed NFC chip</li>
+            <li>Google review setup</li>
+          </ul>
+
+        </div>
+
+
+        <div class="dark-card">
+
+          <h3>
+            NFC Keychains
+          </h3>
+
+          <div class="price">
+            From $15
+          </div>
+
+          <p>
+            Individual or bundle pricing
+          </p>
+
+          <ul class="features">
+            <li>Portable review access</li>
+            <li>Custom programmed</li>
+            <li>Bulk options available</li>
+          </ul>
+
+        </div>
+
+
+        <div class="dark-card">
+
+          <h3>
+            TapGrowth Care
+          </h3>
+
+          <div class="price">
+            $25/mo
+          </div>
+
+          <p>
+            Optional managed service
+          </p>
+
+          <ul class="features">
+            <li>Business landing page</li>
+            <li>Link updates</li>
+            <li>NFC support</li>
+            <li>Monthly review reporting</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="logo" style="font-size:42px;margin-bottom:25px;">
+        <span>Tap</span>
+        <span>Growth</span>
+      </div>
+
+      <h2>
+        Ready to grow your reviews?
+      </h2>
+
+      <p>
+        Contact TapGrowth to get your NFC review system set up.
+      </p>
+
+      <a
+        class="btn btn-primary"
+        href="mailto:hello@tapgrowth.com.au"
+      >
+        Contact TapGrowth
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © 2026 TapGrowth · tapgrowth.com.au
+
+  </div>
+
+</footer>
+
+</body>
+</html>
