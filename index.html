@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <title>TapGrowth | Smart NFC Solutions for Local Businesses</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0b0d10;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 13, 16, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #22262d;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-weight: 900;
+      font-size: 27px;
+      line-height: 0.78;
+      letter-spacing: -1.4px;
+      transform: rotate(-2deg);
+    }
+
+    .logo span {
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: #bec3cc;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-cta {
+      padding: 11px 17px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6e63ff, #9363ff);
+      font-weight: 800;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 55px;
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #181b21;
+      border: 1px solid #2b2f37;
+      color: #d0d4dc;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 80px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .accent {
+      background: linear-gradient(90deg, #7a71ff, #ac76ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #b8bec8;
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 21px;
+      border-radius: 999px;
+      font-weight: 850;
+      transition: 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6e63ff, #9363ff);
+      box-shadow: 0 12px 30px rgba(110, 99, 255, 0.26);
+    }
+
+    .btn-secondary {
+      border: 1px solid #343842;
+      background: #121419;
+    }
+
+    .hero-panel {
+      min-height: 500px;
+      border-radius: 30px;
+      border: 1px solid #292d35;
+      background:
+        radial-gradient(circle at top left, rgba(110, 99, 255, 0.25), transparent 32%),
+        linear-gradient(145deg, #171a20, #101217);
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 35px 80px rgba(0,0,0,.28);
+    }
+
+    .demo-item {
+      background: rgba(255,255,255,.04);
+      border: 1px solid #30343c;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .demo-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .demo-item span {
+      color: #9da4ae;
+      font-size: 13px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .light {
+      background: #f5f6f8;
+      color: #121419;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: #69707b;
+      font-size: 17px;
+    }
+
+    /* HOW */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4e7ed;
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #6e63ff, #9363ff);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #6a717c;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: #15181d;
+      border: 1px solid #292d35;
+      border-radius: 22px;
+      padding: 28px;
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #232730;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      margin-bottom: 18px;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .service p {
+      color: #aab0bb;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: #15181d;
+      border: 1px solid #2b2f37;
+      border-radius: 22px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .price-card.featured {
+      outline: 2px solid #7065ff;
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #7065ff;
+      padding: 5px 9px;
+      font-size: 11px;
+      font-weight: 900;
+      border-radius: 999px;
+    }
+
+    .price-card h3 {
+      font-size: 20px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: 900;
+      margin: 12px 0 3px;
+    }
+
+    .price-note {
+      color: #8f96a0;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      list-style: none;
+    }
+
+    .features li {
+      margin: 10px 0;
+      color: #c7cbd3;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: #39ce7a;
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      min-height: 300px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(110,99,255,.32), transparent 30%),
+        #15181d;
+      border: 1px solid #2b2f37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .about-box .logo {
+      font-size: 58px;
+    }
+
+    .about-copy h2 {
+      font-size: 42px;
+      letter-spacing: -1.4px;
+      margin-bottom: 15px;
+    }
+
+    .about-copy p {
+      color: #aeb4bf;
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background: #f5f6f8;
+      color: #111318;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #e4e7ec;
+      border-radius: 26px;
+      padding: 44px 28px;
+      box-shadow: 0 18px 50px rgba(18,22,28,.08);
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      letter-spacing: -1.5px;
+    }
+
+    .contact p {
+      color: #6a717c;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      color: #707680;
+      border-top: 1px solid #23262d;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps,
+      .services,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 55px 0;
+      }
+
+      .hero-panel {
+        min-height: 390px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <span>Tap</span>
+        <span>Growth</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#how">How It Works</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+      </div>
+
+      <a href="#contact" class="nav-cta">Contact Me</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <div class="container">
+    <section class="hero">
+
+      <div>
+        <div class="eyebrow">Smart NFC solutions for local businesses</div>
+
+        <h1>
+          Make it easier for customers to
+          <span class="accent">take action.</span>
+        </h1>
+
+        <p>
+          TapGrowth helps local businesses connect customers directly to the
+          things that matter — Google reviews, bookings, memberships, websites,
+          menus, social pages and more — using simple NFC technology.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#how" class="btn btn-secondary">See How It Works</a>
+        </div>
+      </div>
+
+
+      <div class="hero-panel">
+
+        <div class="demo-item">
+          <strong>⭐ Google Reviews</strong>
+          <span>Send customers directly to your review page.</span>
+        </div>
+
+        <div class="demo-item">
+          <strong>📅 Bookings & Memberships</strong>
+          <span>Link directly to your existing booking or sign-up page.</span>
+        </div>
+
+        <div class="demo-item">
+          <strong>🌐 Business Landing Pages</strong>
+          <span>Your own TapGrowth page with all important links in one place.</span>
+        </div>
+
+        <div class="demo-item">
+          <strong>📱 NFC Stands & Keychains</strong>
+          <span>Customers simply tap their phone — no app needed.</span>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+
+  <!-- HOW IT WORKS -->
+
+  <section class="light" id="how">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Simple for you. Even simpler for your customers.</h2>
+        <p>
+          TapGrowth is built around reducing friction. One tap can take your
+          customer directly where you want them to go.
+        </p>
+      </div>
+
+
+      <div class="steps">
+
+        <div class="card">
+          <div class="number">1</div>
+          <h3>I set it up</h3>
+          <p>
+            I program your NFC product and connect it to the right business links.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">2</div>
+          <h3>Your customer taps</h3>
+          <p>
+            They simply hold their phone near your NFC stand, card or keychain.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">3</div>
+          <h3>They take action</h3>
+          <p>
+            Reviews, bookings, memberships, menus or any other link opens instantly.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>What TapGrowth can do</h2>
+        <p>
+          Start with a simple review stand or build a complete customer-facing
+          TapGrowth page for your business.
+        </p>
+      </div>
+
+
+      <div class="services">
+
+        <div class="service">
+          <div class="service-icon">⭐</div>
+          <h3>Google Review NFC Stands</h3>
+          <p>
+            Give customers a simple one-tap way to reach your official Google
+            review page while their experience is still fresh.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-icon">🔗</div>
+          <h3>Custom Business Landing Pages</h3>
+          <p>
+            A professional mobile page under TapGrowth containing your reviews,
+            booking links, website, social pages, directions and more.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-icon">🔑</div>
+          <h3>NFC Keychains</h3>
+          <p>
+            Ideal for tradies and mobile businesses that want customers to tap
+            and review, call, book or refer while you're on the go.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-icon">🛠️</div>
+          <h3>Ongoing Management</h3>
+          <p>
+            If your links, offers or business details change, TapGrowth can manage
+            and update your customer landing page for you.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="pricing">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Simple pricing</h2>
+        <p>
+          These are starting prices. Custom bundles can be created depending on
+          what your business needs.
+        </p>
+      </div>
+
+
+      <div class="pricing">
+
+        <div class="price-card">
+          <h3>Google Review Stand</h3>
+          <div class="price">$99</div>
+          <div class="price-note">One-time purchase</div>
+
+          <ul class="features">
+            <li>Acrylic NFC review stand</li>
+            <li>Programmed to your business</li>
+            <li>Google review link setup</li>
+            <li>Ready to use</li>
+          </ul>
+        </div>
+
+
+        <div class="price-card featured">
+          <div class="badge">POPULAR</div>
+
+          <h3>TapGrowth Business Page</h3>
+          <div class="price">$25/mo</div>
+          <div class="price-note">Managed monthly service</div>
+
+          <ul class="features">
+            <li>Your own TapGrowth landing page</li>
+            <li>Google review button</li>
+            <li>Booking / website / social links</li>
+            <li>Link updates & support</li>
+            <li>Ongoing page management</li>
+          </ul>
+        </div>
+
+
+        <div class="price-card">
+          <h3>Custom NFC Bundle</h3>
+          <div class="price">Custom</div>
+          <div class="price-note">Built around your business</div>
+
+          <ul class="features">
+            <li>Multiple review stands</li>
+            <li>NFC keychains</li>
+            <li>Custom landing pages</li>
+            <li>Bulk pricing available</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-box">
+          <div class="logo">
+            <span>Tap</span>
+            <span>Growth</span>
+          </div>
+        </div>
+
+
+        <div class="about-copy">
+          <h2>Built for local businesses.</h2>
+
+          <p>
+            Hi, I'm Bradley, the person behind TapGrowth.
+          </p>
+
+          <p>
+            I'm building simple NFC tools that help local businesses make it
+            easier for customers to leave reviews, book services and reach the
+            right online pages without having to search around.
+          </p>
+
+          <p>
+            My goal is straightforward: make the process easier for the business
+            and easier for the customer.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div class="logo" style="font-size:38px; margin:0 auto 24px; width:max-content;">
+          <span>Tap</span>
+          <span>Growth</span>
+        </div>
+
+        <h2>Interested in TapGrowth?</h2>
+
+        <p>
+          Get in touch and tell me what type of business you run.
+          I can help work out the best NFC setup for you.
+        </p>
+
+        <a
+          href="mailto:hello@tapgrowth.com.au?subject=TapGrowth%20Enquiry"
+          class="btn btn-primary"
+        >
+          Contact TapGrowth
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    © 2026 TapGrowth · tapgrowth.com.au
+  </div>
+</footer>
+
+
+</body>
+</html>
