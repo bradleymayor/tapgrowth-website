@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KeepSake Collectables | Pokémon Collectables Australia</title>
+
+  <meta
+    name="description"
+    content="Shop Pokémon cards, collectables and products from KeepSake Collectables."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 30, 30, 0.16), transparent 35%),
+        #080808;
+      color: white;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header-logo {
+      width: 180px;
+      max-width: 60%;
+      border-radius: 10px;
+    }
+
+    /* HERO */
+
+    .hero {
+      width: 100%;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 55px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: rgba(210, 0, 20, 0.2);
+      border-radius: 50%;
+      filter: blur(110px);
+      top: -160px;
+      left: -100px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(255, 0, 20, 0.15);
+      border-radius: 50%;
+      filter: blur(120px);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand-logo {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 22px;
+      margin-bottom: 35px;
+      box-shadow: 0 20px 60px rgba(220, 0, 25, 0.22);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 9px 16px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      color: #e4e4e4;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: #e50923;
+    }
+
+    .hero-text {
+      max-width: 590px;
+      margin: 0 auto 32px;
+      color: #bdbdbd;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-width: 180px;
+      padding: 17px 26px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #d90820;
+      color: white;
+      box-shadow: 0 10px 35px rgba(217, 8, 32, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #f10b27;
+      box-shadow: 0 15px 40px rgba(217, 8, 32, 0.48);
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    /* PRODUCT SECTION */
+
+    .products {
+      width: 100%;
+      padding: 30px 20px 90px;
+    }
+
+    .product-card {
+      width: 100%;
+      max-width: 980px;
+      margin: auto;
+      padding: 12px;
+      border-radius: 28px;
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.025)
+      );
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-card img {
+      display: block;
+      width: 100%;
+      max-height: 900px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      width: 100%;
+      padding: 90px 20px;
+      background: #0d0d0d;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .about-content {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #e50923;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .about h2 {
+      font-size: clamp(30px, 6vw, 48px);
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .about p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 100px 20px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(215, 0, 30, 0.15), transparent 45%),
+        #080808;
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 6vw, 50px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #aaa;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      background: #050505;
+    }
+
+    footer strong {
+      color: #aaa;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px;
+      }
+
+      .header-logo {
+        width: 145px;
+      }
+
+      .hero {
+        padding: 45px 18px 60px;
+        min-height: auto;
+      }
+
+      .brand-logo {
+        max-width: 330px;
+        margin-bottom: 28px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .product-card {
+        padding: 8px;
+        border-radius: 21px;
+      }
+
+      .product-card img {
+        border-radius: 15px;
+      }
+
+      .products {
+        padding: 10px 15px 65px;
+      }
+
+      .about {
+        padding: 70px 20px;
+      }
+
+      .cta {
+        padding: 75px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img
+      src="keepsake-logo.jpeg"
+      alt="KeepSake Collectables"
+      class="header-logo"
+    />
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <img
+        src="keepsake-logo.jpeg"
+        alt="KeepSake Collectables Logo"
+        class="brand-logo"
+      />
+
+      <div class="tag">Pokémon • Collectables • Australia</div>
+
+      <h1>
+        Collect What<br />
+        <span>You Love.</span>
+      </h1>
+
+      <p class="hero-text">
+        Discover Pokémon cards, products and collectables from
+        KeepSake Collectables. Find something new for your collection
+        and shop online today.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="https://keepsakecollectables.com.au/collections/all"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Shop Now
+        </a>
+
+        <a
+          href="https://keepsakecollectables.com.au/pages/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PRODUCT IMAGE -->
+  <section class="products">
+
+    <div class="product-card">
+      <img
+        src="keepsake-products.jpeg"
+        alt="Pokémon products available from KeepSake Collectables"
+      />
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+
+    <div class="about-content">
+
+      <div class="section-label">
+        KeepSake Collectables
+      </div>
+
+      <h2>
+        Built for Pokémon collectors.
+      </h2>
+
+      <p>
+        Whether you're adding to your personal collection, searching
+        for your next favourite card or looking for new Pokémon
+        products, KeepSake Collectables makes it easy to browse and
+        shop online.
+      </p>
+
+      <a
+        href="https://keepsakecollectables.com.au/collections/all"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Browse the Shop
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="cta">
+
+    <h2>Find your next collectable.</h2>
+
+    <p>
+      Explore the latest products available from KeepSake Collectables.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        href="https://keepsakecollectables.com.au/collections/all"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Shop Now
+      </a>
+
+      <a
+        href="https://keepsakecollectables.com.au/pages/contact"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-secondary"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>KeepSake Collectables</strong>
+    <br /><br />
+    Landing page powered by TapGrowth
+  </footer>
+
+</body>
+</html>
