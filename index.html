@@ -3,604 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>TapGrowth | NFC Stands & Digital Landing Pages</title>
-
-  <meta
-    name="description"
-    content="TapGrowth helps businesses connect customers to reviews, bookings, websites, socials and more with NFC smart stands and digital landing pages."
-  />
-
+  <meta name="description" content="TapGrowth helps businesses connect customers to reviews, bookings, websites, socials and more with NFC smart stands and digital landing pages." />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #061126;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(6, 17, 38, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .logo span {
-      color: #3185ff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: #dce7fa;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 105px 0 90px;
-      background:
-        radial-gradient(circle at top right, rgba(49,133,255,0.25), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(0,100,255,0.15), transparent 30%),
-        #061126;
-    }
-
-    .hero-wrap {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(49,133,255,0.12);
-      border: 1px solid rgba(49,133,255,0.35);
-      color: #64a5ff;
-      padding: 8px 15px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: clamp(44px, 8vw, 78px);
-      line-height: 1.02;
-      letter-spacing: -3px;
-      margin-bottom: 24px;
-    }
-
-    h1 span {
-      color: #3185ff;
-    }
-
-    .hero p {
-      max-width: 720px;
-      margin: auto;
-      font-size: 19px;
-      color: #b8c7df;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: #3185ff;
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #4d96ff;
-    }
-
-    .btn-secondary {
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.04);
-    }
-
-    /* GENERAL */
-    section {
-      padding: 90px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 50px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(32px, 6vw, 48px);
-      margin-bottom: 14px;
-    }
-
-    .section-heading p {
-      color: #aebbd1;
-      font-size: 17px;
-    }
-
-    /* FEATURES */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: #0c1a35;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 28px;
-    }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(49,133,255,0.14);
-      margin-bottom: 18px;
-      font-size: 23px;
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-      font-size: 19px;
-    }
-
-    .card p {
-      color: #aebbd1;
-      font-size: 15px;
-    }
-
-    /* HOW IT WORKS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .step-number {
-      color: #3185ff;
-      font-size: 40px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    /* PRICING */
-    .pricing {
-      background: #09162e;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .price-card {
-      background: #0c1a35;
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 22px;
-      padding: 32px;
-      position: relative;
-    }
-
-    .price-card.featured {
-      border: 2px solid #3185ff;
-      transform: scale(1.03);
-    }
-
-    .popular {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #3185ff;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .price-card h3 {
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 42px;
-      font-weight: 900;
-      margin: 15px 0 5px;
-    }
-
-    .price small {
-      font-size: 15px;
-      font-weight: 500;
-      color: #9aaac3;
-    }
-
-    .price-card ul {
-      list-style: none;
-      margin: 24px 0;
-    }
-
-    .price-card li {
-      padding: 8px 0;
-      color: #c2cee0;
-    }
-
-    .price-card li::before {
-      content: "✓";
-      color: #3185ff;
-      font-weight: 900;
-      margin-right: 8px;
-    }
-
-    /* EXAMPLE PAGE */
-    .landing-demo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .phone {
-      max-width: 340px;
-      width: 100%;
-      margin: auto;
-      background: #ffffff;
-      color: #101828;
-      padding: 14px;
-      border-radius: 35px;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
-    }
-
-    .phone-screen {
-      border-radius: 25px;
-      padding: 30px 20px;
-      background: #f5f7fb;
-      text-align: center;
-    }
-
-    .business-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      background: #101a2f;
-      display: grid;
-      place-items: center;
-      color: #ffffff;
-      font-weight: 900;
-      margin: auto auto 15px;
-    }
-
-    .demo-button {
-      display: block;
-      margin-top: 12px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #101a2f;
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .landing-copy h2 {
-      font-size: 44px;
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    .landing-copy p {
-      color: #aebbd1;
-      margin-bottom: 24px;
-    }
-
-    .landing-copy ul {
-      list-style: none;
-    }
-
-    .landing-copy li {
-      padding: 8px 0;
-      color: #d5dfed;
-    }
-
-    .landing-copy li::before {
-      content: "✓";
-      color: #3185ff;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    /* CTA */
-    .cta {
-      text-align: center;
-    }
-
-    .cta-box {
-      padding: 60px 25px;
-      border-radius: 25px;
-      background:
-        linear-gradient(135deg, rgba(49,133,255,0.23), rgba(49,133,255,0.03)),
-        #0b1933;
-      border: 1px solid rgba(49,133,255,0.25);
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 14px;
-    }
-
-    .cta p {
-      color: #afbed4;
-      max-width: 620px;
-      margin: auto;
-    }
-
-    footer {
-      padding: 35px 0;
-      text-align: center;
-      color: #7f8da5;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 14px;
-    }
-
-    /* MOBILE */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #061126; color: #ffffff; line-height: 1.6; }
+    a { text-decoration: none; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,17,38,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font-size: 28px; font-weight: 800; color: #ffffff; }
+    .logo span { color: #3185ff; }
+    .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: #dce7fa; font-size: 14px; font-weight: 600; }
+    .hero { padding: 105px 0 90px; background: radial-gradient(circle at top right, rgba(49,133,255,0.25), transparent 35%), radial-gradient(circle at bottom left, rgba(0,100,255,0.15), transparent 30%), #061126; }
+    .hero-wrap { max-width: 850px; margin: auto; text-align: center; }
+    .badge { display: inline-block; background: rgba(49,133,255,0.12); border: 1px solid rgba(49,133,255,0.35); color: #64a5ff; padding: 8px 15px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 24px; }
+    h1 { font-size: clamp(44px, 8vw, 78px); line-height: 1.02; letter-spacing: -3px; margin-bottom: 24px; }
+    h1 span { color: #3185ff; }
+    .hero p { max-width: 720px; margin: auto; font-size: 19px; color: #b8c7df; }
+    .hero-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .btn { display: inline-block; padding: 15px 24px; border-radius: 12px; font-weight: 800; transition: 0.2s; }
+    .btn-primary { background: #3185ff; color: #ffffff; }
+    .btn-primary:hover { transform: translateY(-2px); background: #4d96ff; }
+    .btn-secondary { color: #ffffff; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+    section { padding: 90px 0; }
+    .section-heading { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+    .section-heading h2 { font-size: clamp(32px, 6vw, 48px); margin-bottom: 14px; }
+    .section-heading p { color: #aebbd1; font-size: 17px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .card { background: #0c1a35; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 28px; }
+    .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: rgba(49,133,255,0.14); margin-bottom: 18px; font-size: 23px; }
+    .card h3 { margin-bottom: 8px; font-size: 19px; }
+    .card p { color: #aebbd1; font-size: 15px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step-number { color: #3185ff; font-size: 40px; font-weight: 900; margin-bottom: 8px; }
+    .pricing { background: #09162e; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+    .price-card { background: #0c1a35; border: 1px solid rgba(255,255,255,0.09); border-radius: 22px; padding: 32px; position: relative; }
+    .price-card.featured { border: 2px solid #3185ff; transform: scale(1.03); }
+    .popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #3185ff; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .price-card h3 { font-size: 23px; margin-bottom: 10px; }
+    .price { font-size: 42px; font-weight: 900; margin: 15px 0 5px; }
+    .price small { font-size: 15px; font-weight: 500; color: #9aaac3; }
+    .price-card ul { list-style: none; margin: 24px 0; }
+    .price-card li { padding: 8px 0; color: #c2cee0; }
+    .price-card li::before { content: "✓"; color: #3185ff; font-weight: 900; margin-right: 8px; }
+    .landing-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+    .phone { max-width: 340px; width: 100%; margin: auto; background: #ffffff; color: #101828; padding: 14px; border-radius: 35px; box-shadow: 0 25px 80px rgba(0,0,0,0.35); }
+    .phone-screen { border-radius: 25px; padding: 30px 20px; background: #f5f7fb; text-align: center; }
+    .business-logo { width: 80px; height: 80px; border-radius: 20px; background: #101a2f; display: grid; place-items: center; color: #ffffff; font-weight: 900; margin: auto auto 15px; }
+    .demo-button { display: block; margin-top: 12px; padding: 14px; border-radius: 10px; background: #101a2f; color: #ffffff; font-weight: 700; }
+    .landing-copy h2 { font-size: 44px; line-height: 1.1; margin-bottom: 18px; }
+    .landing-copy p { color: #aebbd1; margin-bottom: 24px; }
+    .landing-copy ul { list-style: none; }
+    .landing-copy li { padding: 8px 0; color: #d5dfed; }
+    .landing-copy li::before { content: "✓"; color: #3185ff; margin-right: 10px; font-weight: bold; }
+    .cta { text-align: center; }
+    .cta-box { padding: 60px 25px; border-radius: 25px; background: linear-gradient(135deg, rgba(49,133,255,0.23), rgba(49,133,255,0.03)), #0b1933; border: 1px solid rgba(49,133,255,0.25); }
+    .cta h2 { font-size: 42px; margin-bottom: 14px; }
+    .cta p { color: #afbed4; max-width: 620px; margin: auto; }
+    footer { padding: 35px 0; text-align: center; color: #7f8da5; border-top: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
     @media (max-width: 900px) {
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .price-card.featured {
-        transform: none;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .landing-demo {
-        grid-template-columns: 1fr;
-      }
-
-      .landing-copy {
-        text-align: center;
-      }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card.featured { transform: none; }
+      .steps { grid-template-columns: 1fr; }
+      .landing-demo { grid-template-columns: 1fr; }
+      .landing-copy { text-align: center; }
     }
-
     @media (max-width: 600px) {
-      .nav-inner {
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 80px 0 70px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      section {
-        padding: 70px 0;
-      }
+      .nav-inner { padding: 14px 0; }
+      .nav-links { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero { padding: 80px 0 70px; }
+      h1 { letter-spacing: -2px; }
+      section { padding: 70px 0; }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- NAVIGATION -->
   <nav>
     <div class="container nav-inner">
       <div class="logo">Tap<span>Growth</span></div>
-
       <div class="nav-links">
         <a href="#offer">What We Offer</a>
         <a href="#pricing">Pricing</a>
         <a href="#how">How It Works</a>
-        <a href="#contact">Contact</a>
+        <a href="/contact/">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="container hero-wrap">
-
-      <div class="badge">
-        SIMPLE DIGITAL TOOLS FOR LOCAL BUSINESSES
-      </div>
-
-      <h1>
-        One Tap.<br>
-        <span>More Customers.</span>
-      </h1>
-
-      <p>
-        TapGrowth creates NFC smart stands and custom digital landing pages
-        that give customers instant access to your reviews, bookings,
-        website, socials, contact information and more.
-      </p>
-
+      <div class="badge">SIMPLE DIGITAL TOOLS FOR LOCAL BUSINESSES</div>
+      <h1>One Tap.<br><span>More Customers.</span></h1>
+      <p>TapGrowth creates NFC smart stands and custom digital landing pages that give customers instant access to your reviews, bookings, website, socials, contact information and more.</p>
       <div class="hero-buttons">
         <a href="#offer" class="btn btn-primary">What We Offer</a>
         <a href="#pricing" class="btn btn-secondary">View Pricing</a>
       </div>
-
     </div>
   </header>
 
-  <!-- WHAT WE OFFER -->
   <section id="offer">
     <div class="container">
-
       <div class="section-heading">
         <h2>What We Offer</h2>
-        <p>
-          One simple tap can send your customers exactly where you want them.
-        </p>
+        <p>One simple tap can send your customers exactly where you want them.</p>
       </div>
-
       <div class="feature-grid">
-
         <div class="card">
           <div class="icon">⭐</div>
           <h3>Google Reviews</h3>
-          <p>
-            Make it easier for happy customers to leave your business a review.
-          </p>
+          <p>Make it easier for happy customers to leave your business a review.</p>
         </div>
-
         <div class="card">
           <div class="icon">📅</div>
           <h3>Bookings</h3>
-          <p>
-            Send customers directly to your booking or appointment system.
-          </p>
+          <p>Send customers directly to your booking or appointment system.</p>
         </div>
-
         <div class="card">
           <div class="icon">🌐</div>
           <h3>Website & Offers</h3>
-          <p>
-            Promote your website, products, latest offers or important pages.
-          </p>
+          <p>Promote your website, products, latest offers or important pages.</p>
         </div>
-
         <div class="card">
           <div class="icon">📱</div>
           <h3>Social Media</h3>
-          <p>
-            Connect customers instantly to Instagram, Facebook and other socials.
-          </p>
+          <p>Connect customers instantly to Instagram, Facebook and other socials.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- LANDING PAGE -->
   <section>
     <div class="container landing-demo">
-
       <div class="phone">
         <div class="phone-screen">
-
-          <div class="business-logo">
-            LOGO
-          </div>
-
+          <div class="business-logo">LOGO</div>
           <h3>Your Business</h3>
-          <p style="color:#667085; margin:8px 0 20px;">
-            Everything your customer needs in one place.
-          </p>
-
-          <a class="demo-button" href="#">
-            ⭐ Leave a Google Review
-          </a>
-
-          <a class="demo-button" href="#">
-            📅 Book Now
-          </a>
-
-          <a class="demo-button" href="#">
-            🌐 Visit Website
-          </a>
-
-          <a class="demo-button" href="#">
-            📱 Instagram
-          </a>
-
-          <a class="demo-button" href="#">
-            📍 Directions
-          </a>
-
+          <p style="color:#667085; margin:8px 0 20px;">Everything your customer needs in one place.</p>
+          <a class="demo-button" href="#">⭐ Leave a Google Review</a>
+          <a class="demo-button" href="#">📅 Book Now</a>
+          <a class="demo-button" href="#">🌐 Visit Website</a>
+          <a class="demo-button" href="#">📱 Instagram</a>
+          <a class="demo-button" href="#">📍 Directions</a>
         </div>
       </div>
-
       <div class="landing-copy">
-
         <h2>Your Entire Business In One Tap</h2>
-
-        <p>
-          Instead of having a stand that does only one thing, your TapGrowth
-          stand can open a custom page designed specifically for your business.
-        </p>
-
+        <p>Instead of having a stand that does only one thing, your TapGrowth stand can open a custom page designed specifically for your business.</p>
         <ul>
           <li>Google review button</li>
           <li>Bookings and appointments</li>
@@ -610,77 +165,46 @@
           <li>Directions</li>
           <li>Menus, products or current offers</li>
         </ul>
-
       </div>
-
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section id="how">
     <div class="container">
-
       <div class="section-heading">
         <h2>How It Works</h2>
-        <p>
-          No app required. Customers simply tap their phone.
-        </p>
+        <p>No app required. Customers simply tap their phone.</p>
       </div>
-
       <div class="steps">
-
         <div class="card">
           <div class="step-number">01</div>
           <h3>We Set It Up</h3>
-          <p>
-            Your NFC stand is programmed and your custom landing page is created.
-          </p>
+          <p>Your NFC stand is programmed and your custom landing page is created.</p>
         </div>
-
         <div class="card">
           <div class="step-number">02</div>
           <h3>Customer Taps</h3>
-          <p>
-            Customers hold their compatible smartphone near the stand.
-          </p>
+          <p>Customers hold their compatible smartphone near the stand.</p>
         </div>
-
         <div class="card">
           <div class="step-number">03</div>
           <h3>They Connect</h3>
-          <p>
-            Your business page opens instantly with all your important links.
-          </p>
+          <p>Your business page opens instantly with all your important links.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- PRICING -->
   <section class="pricing" id="pricing">
     <div class="container">
-
       <div class="section-heading">
         <h2>Simple Pricing</h2>
-        <p>
-          Start with one stand or place multiple stands around your business.
-        </p>
+        <p>Start with one stand or place multiple stands around your business.</p>
       </div>
-
       <div class="pricing-grid">
-
-        <!-- STAND -->
         <div class="price-card">
-
           <h3>NFC Smart Stand</h3>
-
-          <div class="price">
-            $55
-            <small>each</small>
-          </div>
-
+          <div class="price">$55 <small>each</small></div>
           <ul>
             <li>NFC enabled stand</li>
             <li>Fully programmed</li>
@@ -688,27 +212,13 @@
             <li>Can link to almost any URL</li>
             <li>One-time payment</li>
           </ul>
-
-          <a href="#contact" class="btn btn-secondary">
-            Get A Stand
-          </a>
-
+          <a href="/contact/?interest=stand" class="btn btn-secondary">Get A Stand</a>
         </div>
 
-        <!-- SUBSCRIPTION -->
         <div class="price-card featured">
-
-          <div class="popular">
-            MOST POPULAR
-          </div>
-
+          <div class="popular">MOST POPULAR</div>
           <h3>Digital Landing Page</h3>
-
-          <div class="price">
-            $25
-            <small>/ month</small>
-          </div>
-
+          <div class="price">$25 <small>/ month</small></div>
           <ul>
             <li>Custom business landing page</li>
             <li>Google review button</li>
@@ -717,27 +227,13 @@
             <li>Contact & directions</li>
             <li>Page updates when needed</li>
           </ul>
-
-          <a href="#contact" class="btn btn-primary">
-            Get Started
-          </a>
-
+          <a href="/contact/?interest=landing-page" class="btn btn-primary">Get Started</a>
         </div>
 
-        <!-- BUNDLE -->
         <div class="price-card">
-
           <h3>Stand + Page</h3>
-
-          <div class="price">
-            $75
-            <small>setup</small>
-          </div>
-
-          <p style="color:#9eabc0;">
-            Then $25/month
-          </p>
-
+          <div class="price">$75 <small>setup</small></div>
+          <p style="color:#9eabc0;">Then $25/month</p>
           <ul>
             <li>1 NFC smart stand</li>
             <li>Custom landing page</li>
@@ -745,62 +241,27 @@
             <li>Additional stands $55 each</li>
             <li>Everything ready to use</li>
           </ul>
-
-          <a href="#contact" class="btn btn-secondary">
-            Choose Bundle
-          </a>
-
+          <a href="/contact/?interest=bundle" class="btn btn-secondary">Choose Bundle</a>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta" id="contact">
     <div class="container">
-
       <div class="cta-box">
-
         <h2>Ready To Grow?</h2>
-
-        <p>
-          Tell us what you want customers to access and TapGrowth can create
-          the stand and digital experience for your business.
-        </p>
-
+        <p>Tell us what you want customers to access and TapGrowth can create the stand and digital experience for your business.</p>
         <div class="hero-buttons">
-
-          <!-- CHANGE THESE TO YOUR REAL CONTACT LINKS -->
-
-          <a
-            href="mailto:YOUR-EMAIL-HERE"
-            class="btn btn-primary"
-          >
-            Contact TapGrowth
-          </a>
-
-          <a
-            href="https://tapgrowth.com.au"
-            class="btn btn-secondary"
-          >
-            TapGrowth.com.au
-          </a>
-
+          <a href="/contact/" class="btn btn-primary">Contact TapGrowth</a>
+          <a href="https://tapgrowth.com.au" class="btn btn-secondary">TapGrowth.com.au</a>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      © 2026 TapGrowth · Sydney, NSW · TapGrowth.com.au
-    </div>
+    <div class="container">© 2026 TapGrowth · Sydney, NSW · TapGrowth.com.au</div>
   </footer>
-
 </body>
 </html>
