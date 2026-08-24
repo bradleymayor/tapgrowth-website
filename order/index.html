@@ -55,12 +55,12 @@
           </div>
 
           <div class="field">
-            <label for="logo">Upload your logo / branding image</label>
+            <label for="logo" id="logoLabel">Upload your logo / branding image</label>
             <input class="file" id="logo" name="Logo or Branding Attachment" type="file" accept="image/png,image/jpeg" />
-            <span class="help">JPG, JPEG or PNG. Attachments can total up to 10MB.</span>
+            <span class="help" id="logoHelp">JPG, JPEG or PNG. Attachments can total up to 10MB.</span>
           </div>
 
-          <div class="field"><label for="google">Google business / review link</label><input id="google" name="Google Review or Business Link" type="url" placeholder="https://..." /></div>
+          <div class="field"><label for="google" id="googleLabel">Google business / review link</label><input id="google" name="Google Review or Business Link" type="url" placeholder="https://..." /></div>
 
           <div id="landingFields">
             <div class="field">
@@ -89,7 +89,7 @@
           </div>
 
           <div id="proFields" style="display:none">
-            <div class="field"><label for="cobrand">Pro stand co-branding name</label><input id="cobrand" name="Pro Co-branding Name" type="text" placeholder="Example: Smith's Barber × TapGrowth" /></div>
+            <div class="field"><label for="cobrand">Pro stand co-branding name *</label><input id="cobrand" name="Pro Co-branding Name" type="text" placeholder="Example: Smith's Barber × TapGrowth" /></div>
           </div>
 
           <div class="field"><label for="notes">Anything else you want us to know?</label><textarea id="notes" name="Notes" placeholder="Colours, style, special buttons, offers, wording, or anything else you want included."></textarea></div>
@@ -127,6 +127,9 @@ const plans = {
 const raw = new URLSearchParams(location.search).get('plan');
 const key = plans[raw] ? raw : 'landing';
 const plan = plans[key];
+const logo = document.getElementById('logo');
+const google = document.getElementById('google');
+const cobrand = document.getElementById('cobrand');
 document.getElementById('planName').textContent = plan.name;
 document.getElementById('planPrice').textContent = plan.price;
 document.getElementById('planList').innerHTML = plan.list.map(x => '<li>'+x+'</li>').join('');
@@ -135,6 +138,16 @@ document.getElementById('subject').value = 'New TapGrowth Order Setup — ' + pl
 document.getElementById('nextUrl').value = plan.next;
 document.getElementById('landingFields').style.display = key === 'review' ? 'none' : 'block';
 document.getElementById('proFields').style.display = key === 'pro' ? 'block' : 'none';
+if (key === 'review') {
+  google.required = true;
+  document.getElementById('googleLabel').textContent = 'Google business / review link *';
+  document.getElementById('logoHelp').textContent = 'Optional for the Google Review Stand. JPG, JPEG or PNG.';
+} else {
+  logo.required = true;
+  document.getElementById('logoLabel').textContent = 'Upload your logo / branding image *';
+  document.getElementById('logoHelp').textContent = 'Required for your branded landing page. JPG, JPEG or PNG. Attachments can total up to 10MB.';
+}
+if (key === 'pro') cobrand.required = true;
 </script>
 </body>
 </html>
