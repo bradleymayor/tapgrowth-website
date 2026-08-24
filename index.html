@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TapGrowth | NFC Stands & Digital Landing Pages</title>
-  <meta name="description" content="TapGrowth helps businesses connect customers to reviews, bookings, websites, socials and more with NFC smart stands and digital landing pages." />
+  <title>TapGrowth | Google Review Stands & Digital Landing Pages</title>
+  <meta name="description" content="TapGrowth helps local businesses grow with programmed Google review stands, custom landing pages and premium support plans." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -41,13 +41,14 @@
     .step-number { color: #3185ff; font-size: 40px; font-weight: 900; margin-bottom: 8px; }
     .pricing { background: #09162e; }
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
-    .price-card { background: #0c1a35; border: 1px solid rgba(255,255,255,0.09); border-radius: 22px; padding: 32px; position: relative; }
+    .price-card { background: #0c1a35; border: 1px solid rgba(255,255,255,0.09); border-radius: 22px; padding: 32px; position: relative; display: flex; flex-direction: column; }
     .price-card.featured { border: 2px solid #3185ff; transform: scale(1.03); }
     .popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #3185ff; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; white-space: nowrap; }
     .price-card h3 { font-size: 23px; margin-bottom: 10px; }
-    .price { font-size: 42px; font-weight: 900; margin: 15px 0 5px; }
+    .price { font-size: 42px; font-weight: 900; margin: 15px 0 5px; line-height: 1.15; }
     .price small { font-size: 15px; font-weight: 500; color: #9aaac3; }
-    .price-card ul { list-style: none; margin: 24px 0; }
+    .recurring { color: #9eabc0; font-size: 15px; }
+    .price-card ul { list-style: none; margin: 24px 0; flex: 1; }
     .price-card li { padding: 8px 0; color: #c2cee0; }
     .price-card li::before { content: "✓"; color: #3185ff; font-weight: 900; margin-right: 8px; }
     .landing-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
@@ -100,7 +101,7 @@
     <div class="container hero-wrap">
       <div class="badge">SIMPLE DIGITAL TOOLS FOR LOCAL BUSINESSES</div>
       <h1>One Tap.<br><span>More Customers.</span></h1>
-      <p>TapGrowth creates NFC smart stands and custom digital landing pages that give customers instant access to your reviews, bookings, website, socials, contact information and more.</p>
+      <p>TapGrowth creates Google review stands and custom digital landing pages that make it easier for customers to review, book, contact and connect with your business.</p>
       <div class="hero-buttons">
         <a href="#offer" class="btn btn-primary">What We Offer</a>
         <a href="#pricing" class="btn btn-secondary">View Pricing</a>
@@ -179,7 +180,7 @@
         <div class="card">
           <div class="step-number">01</div>
           <h3>We Set It Up</h3>
-          <p>Your NFC stand is programmed and your custom landing page is created.</p>
+          <p>Your stand is programmed to your business and your landing page is created if included in your plan.</p>
         </div>
         <div class="card">
           <div class="step-number">02</div>
@@ -189,7 +190,7 @@
         <div class="card">
           <div class="step-number">03</div>
           <h3>They Connect</h3>
-          <p>Your business page opens instantly with all your important links.</p>
+          <p>Your Google review page or custom business page opens instantly.</p>
         </div>
       </div>
     </div>
@@ -199,49 +200,54 @@
     <div class="container">
       <div class="section-heading">
         <h2>Simple Pricing</h2>
-        <p>Start with one stand or place multiple stands around your business.</p>
+        <p>Choose a simple Google review stand or a complete digital setup for your business.</p>
       </div>
       <div class="pricing-grid">
         <div class="price-card">
-          <h3>NFC Smart Stand</h3>
-          <div class="price">$55 <small>each</small></div>
+          <h3>Google Review Stand</h3>
+          <div class="price">$55 <small>one-time</small></div>
           <ul>
-            <li>NFC enabled stand</li>
-            <li>Fully programmed</li>
-            <li>Ready to use</li>
-            <li>Can link to almost any URL</li>
-            <li>One-time payment</li>
+            <li>Google review NFC stand</li>
+            <li>Fully programmed to your business</li>
+            <li>Direct link to your Google review page</li>
+            <li>Ready to use when delivered</li>
+            <li>No ongoing monthly fee</li>
           </ul>
-          <a href="/contact/?interest=stand" class="btn btn-secondary">Get A Stand</a>
+          <a href="/contact/?interest=review-stand" class="btn btn-secondary">Get A Review Stand</a>
         </div>
 
         <div class="price-card featured">
           <div class="popular">MOST POPULAR</div>
-          <h3>Digital Landing Page</h3>
-          <div class="price">$25 <small>/ month</small></div>
+          <h3>Landing Page + Stand</h3>
+          <div class="price">$75 <small>upfront</small></div>
+          <p class="recurring">Then $25/month</p>
           <ul>
+            <li>1 fully programmed NFC stand</li>
             <li>Custom business landing page</li>
             <li>Google review button</li>
-            <li>Booking links</li>
-            <li>Website & social links</li>
-            <li>Contact & directions</li>
-            <li>Page updates when needed</li>
+            <li>Bookings and appointments</li>
+            <li>Website and social links</li>
+            <li>Contact details and directions</li>
+            <li>Up to 2 page changes per month</li>
+            <li>Standard support</li>
           </ul>
-          <a href="/contact/?interest=landing-page" class="btn btn-primary">Get Started</a>
+          <a href="/contact/?interest=landing-stand" class="btn btn-primary">Get Started</a>
         </div>
 
         <div class="price-card">
-          <h3>Stand + Page</h3>
-          <div class="price">$75 <small>setup</small></div>
-          <p style="color:#9eabc0;">Then $25/month</p>
+          <h3>TapGrowth Pro</h3>
+          <div class="price">$95 <small>upfront</small></div>
+          <p class="recurring">Then $49/month</p>
           <ul>
-            <li>1 NFC smart stand</li>
-            <li>Custom landing page</li>
-            <li>Fully set up</li>
-            <li>Additional stands $55 each</li>
-            <li>Everything ready to use</li>
+            <li>Everything in Landing Page + Stand</li>
+            <li>Tap and page analytics reporting</li>
+            <li>Priority support</li>
+            <li>Response within 24 hours</li>
+            <li>Unlimited page changes</li>
+            <li>Priority updates and requests</li>
+            <li>Ongoing optimisation as your needs change</li>
           </ul>
-          <a href="/contact/?interest=bundle" class="btn btn-secondary">Choose Bundle</a>
+          <a href="/contact/?interest=pro" class="btn btn-secondary">Choose Pro</a>
         </div>
       </div>
     </div>
@@ -251,7 +257,7 @@
     <div class="container">
       <div class="cta-box">
         <h2>Ready To Grow?</h2>
-        <p>Tell us what you want customers to access and TapGrowth can create the stand and digital experience for your business.</p>
+        <p>Tell us what you want customers to access and TapGrowth can create the right stand and digital experience for your business.</p>
         <div class="hero-buttons">
           <a href="/contact/" class="btn btn-primary">Contact TapGrowth</a>
           <a href="https://tapgrowth.com.au" class="btn btn-secondary">TapGrowth.com.au</a>
