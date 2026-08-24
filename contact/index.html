@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact TapGrowth | Get Started</title>
-  <meta name="description" content="Contact TapGrowth about NFC smart stands, Google review stands and custom digital landing pages for your business." />
+  <meta name="description" content="Contact TapGrowth about Google review stands, landing page packages and TapGrowth Pro for your business." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -193,7 +193,7 @@
           <div class="info-list">
             <div class="info-item">
               <strong>1. Send your enquiry</strong>
-              <span>Tell us about your business and what you want customers to access.</span>
+              <span>Tell us about your business and which TapGrowth option you’re interested in.</span>
             </div>
             <div class="info-item">
               <strong>2. We get back to you</strong>
@@ -201,7 +201,7 @@
             </div>
             <div class="info-item">
               <strong>3. We build your setup</strong>
-              <span>Your NFC stand and/or digital page is prepared and ready to use.</span>
+              <span>Your Google review stand and/or custom landing page is prepared for your business.</span>
             </div>
           </div>
         </aside>
@@ -242,10 +242,9 @@
               <label for="interest">What are you interested in? *</label>
               <select id="interest" name="Interested In" required>
                 <option value="" selected disabled>Select an option</option>
-                <option value="NFC Smart Stand">NFC Smart Stand</option>
-                <option value="Digital Landing Page">Digital Landing Page</option>
-                <option value="Stand + Page Bundle">Stand + Page Bundle</option>
-                <option value="Google Review Setup">Google Review Setup</option>
+                <option value="Google Review Stand">Google Review Stand — $55 one-time</option>
+                <option value="Landing Page + Stand">Landing Page + Stand — $75 upfront + $25/month</option>
+                <option value="TapGrowth Pro">TapGrowth Pro — $95 upfront + $49/month</option>
                 <option value="Other">Other / Not sure yet</option>
               </select>
             </div>
@@ -281,10 +280,9 @@
     const interest = params.get('interest');
     const interestSelect = document.getElementById('interest');
     const interestMap = {
-      'stand': 'NFC Smart Stand',
-      'landing-page': 'Digital Landing Page',
-      'bundle': 'Stand + Page Bundle',
-      'reviews': 'Google Review Setup'
+      'review-stand': 'Google Review Stand',
+      'landing-stand': 'Landing Page + Stand',
+      'pro': 'TapGrowth Pro'
     };
     if (interest && interestMap[interest]) {
       interestSelect.value = interestMap[interest];
