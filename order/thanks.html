@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Details Received | TapGrowth</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top right,rgba(49,133,255,.22),transparent 32%),#061126;color:#fff;min-height:100vh;display:grid;place-items:center;padding:28px}.box{width:min(680px,100%);background:#0c1a35;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:38px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.3)}.tick{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:#163f7d;color:#78adff;font-size:34px;margin:0 auto 20px}h1{font-size:clamp(34px,7vw,52px);line-height:1.05;margin:0 0 14px}p{color:#b7c5da;line-height:1.6}.summary{margin:24px 0;background:#07142b;border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,.07)}.summary strong{display:block;color:#fff;font-size:20px;margin-bottom:5px}.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px 20px;border-radius:12px;background:#3185ff;color:#fff;text-decoration:none;font-weight:900;margin-top:16px}.back{display:inline-block;margin-top:18px;color:#9fb6d8;text-decoration:none;font-size:14px}.secure{font-size:12px;color:#8091ac;margin-top:10px}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at top right,rgba(49,133,255,.22),transparent 32%),#061126;color:#fff;min-height:100vh;display:grid;place-items:center;padding:28px}.box{width:min(680px,100%);background:#0c1a35;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:38px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.3)}.tick{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:#163f7d;color:#78adff;font-size:34px;margin:0 auto 20px}h1{font-size:clamp(34px,7vw,52px);line-height:1.05;margin:0 0 14px}p{color:#b7c5da;line-height:1.6}.summary{margin:24px 0;background:#07142b;border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,.07)}.summary strong{display:block;color:#fff;font-size:20px;margin-bottom:5px}.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px 20px;border-radius:12px;background:#3185ff;color:#fff;text-decoration:none;font-weight:900;margin-top:16px}.btn.disabled{background:#244777;color:#c8d7ea;pointer-events:none}.back{display:inline-block;margin-top:18px;color:#9fb6d8;text-decoration:none;font-size:14px}.secure{font-size:12px;color:#8091ac;margin-top:10px}.notice{display:none;margin-top:14px;padding:12px;border-radius:12px;background:rgba(49,133,255,.08);border:1px solid rgba(49,133,255,.20);color:#aecaef;font-size:13px}
 </style>
 </head>
 <body>
@@ -14,6 +14,7 @@
   <p>Step 1 is complete. Now complete secure payment for the package you selected. TapGrowth will use the business information and any logo you submitted to prepare your setup.</p>
   <div class="summary"><strong id="planName">Landing Page + Stand</strong><span id="planPrice">$75 upfront, then $25/month</span></div>
   <a class="btn" id="payBtn" href="https://buy.stripe.com/7sYfZh4oD5K2cxy5SL2ZO01">Continue To Secure Payment →</a>
+  <div class="notice" id="proNotice">Your Pro details have been received. The Pro checkout is being updated to the new $35/month price, so TapGrowth will provide the correct secure payment link rather than sending you to the old price.</div>
   <div class="secure">🔒 Checkout is securely handled by Stripe.</div>
   <a class="back" href="/">← Back to TapGrowth</a>
 </div>
@@ -21,10 +22,12 @@
 const plans={
 review:{name:'Google Review Stand',price:'$55 one-time',url:'https://buy.stripe.com/aFadR96wLb4mcxy0yr2ZO02'},
 landing:{name:'Landing Page + Stand',price:'$75 upfront, then $25/month',url:'https://buy.stripe.com/7sYfZh4oD5K2cxy5SL2ZO01'},
-pro:{name:'TapGrowth Pro',price:'$99 upfront, then $49/month',url:'https://buy.stripe.com/8x23cv5sHdcu9lmdld2ZO03'}
+pro:{name:'TapGrowth Pro',price:'$99 upfront, then $35/month',url:null}
 };
 const raw=new URLSearchParams(location.search).get('plan');const p=plans[raw]||plans.landing;
-document.getElementById('planName').textContent=p.name;document.getElementById('planPrice').textContent=p.price;document.getElementById('payBtn').href=p.url;
+const btn=document.getElementById('payBtn');
+document.getElementById('planName').textContent=p.name;document.getElementById('planPrice').textContent=p.price;
+if(p.url){btn.href=p.url}else{btn.removeAttribute('href');btn.textContent='Pro $35/month Checkout Link Being Updated';btn.classList.add('disabled');document.getElementById('proNotice').style.display='block'}
 </script>
 </body>
 </html>
