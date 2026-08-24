@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Start Your TapGrowth Order</title>
-  <meta name="description" content="Send TapGrowth your business details, logo and links before completing secure payment." />
+  <meta name="description" content="Send TapGrowth your business details, logo and preferences before completing secure payment." />
   <style>
     *{box-sizing:border-box;margin:0;padding:0} body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top right,rgba(49,133,255,.2),transparent 32%),#061126;color:#fff;line-height:1.6;min-height:100vh} a{text-decoration:none}.container{width:min(1050px,90%);margin:auto}nav{position:sticky;top:0;z-index:100;background:rgba(6,17,38,.96);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)}.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{font-size:28px;font-weight:900;color:#fff}.logo span{color:#3185ff}.back{color:#dce7fa;border:1px solid rgba(255,255,255,.14);padding:9px 13px;border-radius:10px;font-weight:700;font-size:13px}main{padding:68px 0 90px}.heading{text-align:center;max-width:760px;margin:0 auto 34px}.badge{display:inline-block;color:#64a5ff;background:rgba(49,133,255,.12);border:1px solid rgba(49,133,255,.35);padding:7px 14px;border-radius:999px;font-size:12px;font-weight:900;margin-bottom:18px}h1{font-size:clamp(38px,7vw,58px);line-height:1.05;letter-spacing:-2px;margin-bottom:14px}h1 span{color:#3185ff}.heading p,.muted{color:#aebbd1}.layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:start}.panel{background:#0c1a35;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:28px}.plan-card{position:sticky;top:96px}.plan-name{font-size:25px;font-weight:900;margin:6px 0}.plan-price{font-size:32px;font-weight:900;color:#fff;margin-bottom:10px}.plan-price small{font-size:14px;color:#9eabc0;font-weight:500}.plan-list{list-style:none;margin:18px 0}.plan-list li{padding:7px 0;color:#c4d0e2}.plan-list li:before{content:"✓";color:#3185ff;font-weight:900;margin-right:8px}.process{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;margin-top:18px}.process div{margin:9px 0;color:#b8c7df;font-size:14px}.process strong{color:#fff}form{margin-top:20px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{margin-bottom:16px}label{display:block;font-size:14px;font-weight:800;color:#dce7fa;margin-bottom:7px}input,select,textarea{width:100%;border:1px solid rgba(255,255,255,.13);background:#07142b;color:#fff;border-radius:12px;padding:13px 14px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#3185ff;box-shadow:0 0 0 3px rgba(49,133,255,.13)}textarea{min-height:115px;resize:vertical}select option{color:#111}.file{padding:11px;background:#07142b}.help{display:block;color:#7f91ad;font-size:12px;margin-top:6px}.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:7px}.choice{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);padding:10px;border-radius:10px;color:#c5d2e4;font-size:13px}.choice input{width:auto}.btn{width:100%;border:0;border-radius:12px;padding:16px 20px;background:#3185ff;color:#fff;font-size:16px;font-weight:900;cursor:pointer}.btn:hover{background:#4d96ff}.fine{color:#7f91ad;text-align:center;font-size:12px;margin-top:11px}.secure{margin-top:14px;text-align:center;color:#aebbd1;font-size:13px}footer{padding:30px 0;text-align:center;color:#7f8da5;border-top:1px solid rgba(255,255,255,.06);font-size:13px}@media(max-width:800px){.layout{grid-template-columns:1fr}.plan-card{position:static}.form-row,.choice-grid{grid-template-columns:1fr}.panel{padding:22px}}
   </style>
@@ -16,7 +16,7 @@
     <div class="heading">
       <div class="badge">STEP 1 OF 2 — SEND YOUR BUSINESS DETAILS</div>
       <h1>Set Up Your <span>TapGrowth Order.</span></h1>
-      <p>Send your logo, business links and preferences first. Once this form is successfully submitted, you’ll continue to the secure payment page for your selected plan.</p>
+      <p>Send your logo, business details and preferences first. You don’t need to find your Google review link — just tell us the business name and we’ll handle it. Once submitted, you’ll continue to secure payment for your selected plan.</p>
     </div>
     <div class="layout">
       <aside class="panel plan-card">
@@ -27,7 +27,7 @@
         <div class="process">
           <div><strong>1.</strong> Submit this setup form</div>
           <div><strong>2.</strong> Continue to secure Stripe checkout</div>
-          <div><strong>3.</strong> TapGrowth builds and programs your setup</div>
+          <div><strong>3.</strong> TapGrowth finds the correct links, builds and programs your setup</div>
           <div><strong>4.</strong> Your stand is prepared for delivery</div>
         </div>
       </aside>
@@ -60,7 +60,11 @@
             <span class="help" id="logoHelp">JPG, JPEG or PNG. Attachments can total up to 10MB.</span>
           </div>
 
-          <div class="field"><label for="google" id="googleLabel">Google business / review link</label><input id="google" name="Google Review or Business Link" type="url" placeholder="https://..." /></div>
+          <div class="field">
+            <label for="google" id="googleLabel">Google business name / location</label>
+            <input id="google" name="Google Business Name or Location" type="text" placeholder="Example: EB Games Mount Druitt" />
+            <span class="help">No link needed. Type the business name as it appears on Google. If there are multiple locations, include the suburb or address so TapGrowth can find the correct listing.</span>
+          </div>
 
           <div id="landingFields">
             <div class="field">
@@ -85,7 +89,7 @@
               <div class="field"><label for="instagram">Instagram link</label><input id="instagram" name="Instagram Link" type="url" placeholder="https://..." /></div>
               <div class="field"><label for="facebook">Facebook link</label><input id="facebook" name="Facebook Link" type="url" placeholder="https://..." /></div>
             </div>
-            <div class="field"><label for="address">Business address / directions link</label><input id="address" name="Address or Directions" type="text" placeholder="Address or Google Maps link" /></div>
+            <div class="field"><label for="address">Business address / directions</label><input id="address" name="Address or Directions" type="text" placeholder="Business address" /></div>
           </div>
 
           <div id="proFields" style="display:none">
@@ -109,7 +113,7 @@ const plans = {
     name: 'Google Review Stand',
     price: '$55 one-time',
     next: 'https://tapgrowth.com.au/order/thanks.html?plan=review',
-    list: ['Programmed Google review NFC stand','Direct link to your Google review page','Ready to use when delivered','Free Australia-wide shipping']
+    list: ['Programmed Google review NFC stand','TapGrowth finds and connects the correct Google review page','Ready to use when delivered','Free Australia-wide shipping']
   },
   landing: {
     name: 'Landing Page + Stand',
@@ -140,7 +144,7 @@ document.getElementById('landingFields').style.display = key === 'review' ? 'non
 document.getElementById('proFields').style.display = key === 'pro' ? 'block' : 'none';
 if (key === 'review') {
   google.required = true;
-  document.getElementById('googleLabel').textContent = 'Google business / review link *';
+  document.getElementById('googleLabel').textContent = 'Google business name / location *';
   document.getElementById('logoHelp').textContent = 'Optional for the Google Review Stand. JPG, JPEG or PNG.';
 } else {
   logo.required = true;
