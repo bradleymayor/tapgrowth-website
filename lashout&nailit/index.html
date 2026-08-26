@@ -6,11 +6,12 @@
 <meta name="theme-color" content="#071326">
 <title>Lash Out & Nail It</title>
 <meta name="description" content="Lash Out & Nail It — custom nail artist, bookings and contact details.">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 :root{--navy:#071326;--blue:#2f82ff;--line:rgba(255,255,255,.10);--muted:#aab7ca;--white:#fff}
-*{box-sizing:border-box}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:linear-gradient(180deg,#020812,#071326);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-a{text-decoration:none;color:inherit}
+a{text-decoration:none;color:inherit}button{font:inherit}
 .top{position:sticky;top:0;z-index:10;background:rgba(2,8,18,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .topin{max-width:760px;margin:auto;height:62px;padding:0 18px;display:flex;align-items:center}
 .brand{font-weight:950;font-size:22px;letter-spacing:-.8px}.brand span{color:var(--blue)}
@@ -24,16 +25,30 @@ a{text-decoration:none;color:inherit}
 .profile .loc{color:#8fa0b7;font-size:12px;margin-top:5px}
 .profile .tagline{color:#cdd7e5;font-size:14px;line-height:1.45;margin:15px auto 18px;max-width:360px}
 .buttons{display:grid;gap:10px}
-.action{width:100%;min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;color:#fff;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.action{width:100%;min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;color:#fff;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);cursor:pointer}
 .action strong{width:30px;color:#88baff;font-size:16px}.action.primary{background:var(--blue);border-color:var(--blue);color:#fff}.action.primary strong{color:#fff}
 .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .info{background:#0f1d32;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}
 .info b{display:block;font-size:12px;margin-bottom:4px}.info span{font-size:11px;color:#9eacc0;line-height:1.4}
 .notice{margin-top:10px;border:1px solid rgba(47,130,255,.20);background:rgba(47,130,255,.08);border-radius:12px;padding:10px 12px;color:#91beff;font-size:11px;font-weight:800;line-height:1.5}
-.nospots{margin-top:10px;border:1px solid var(--line);background:#0f1d32;border-radius:12px;padding:12px;color:#aab7ca;font-size:11px;line-height:1.5}
-.nospots a{color:#8cbdff;font-weight:900}
 .powered{font-size:10px;color:#708199;margin-top:18px}
-@media(max-width:430px){.wrap{margin-top:22px}.profile{padding-left:16px;padding-right:16px}.mini{grid-template-columns:1fr}}
+.booking{display:none;margin-top:18px;border:1px solid var(--line);border-radius:20px;background:#0b1526;overflow:hidden}
+.booking.show{display:block}
+.booking-head{padding:18px;border-bottom:1px solid var(--line);text-align:left}
+.booking-head h2{font-size:18px;margin:0 0 6px}.booking-head p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.chip{font-size:10px;font-weight:850;color:#91beff;border:1px solid rgba(47,130,255,.22);background:rgba(47,130,255,.08);padding:6px 9px;border-radius:999px}
+.cal-wrap{background:#fff;min-height:760px}.calendly-inline-widget{min-width:320px;height:760px}
+.no-spots{padding:15px 16px;border-top:1px solid var(--line);background:#0f1d32;text-align:center}
+.no-spots b{display:block;font-size:12px;margin-bottom:6px}.no-spots p{font-size:11px;line-height:1.45;color:var(--muted);margin:0 0 11px}
+.social-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-mini a{min-height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:#16263f;font-size:11px;font-weight:900;color:#dce8f7}
+.deposit{display:none;margin-top:18px;border:1px solid rgba(47,130,255,.35);background:linear-gradient(180deg,#0d1d35,#0b1526);border-radius:20px;padding:18px;text-align:left}.deposit.show{display:block}
+.check{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(47,130,255,.16);color:#8cbdff;font-weight:950;margin-bottom:12px}
+.deposit h2{font-size:19px;margin:0 0 7px}.deposit>p{font-size:12px;color:var(--muted);line-height:1.55;margin:0 0 14px}
+.payrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-top:1px solid var(--line)}
+.paylabel{font-size:10px;color:#8fa0b7}.payvalue{font-size:14px;font-weight:900;margin-top:2px}.copy{border:1px solid var(--line);background:#16263f;color:#9dc4ff;border-radius:9px;padding:8px 10px;font-size:10px;font-weight:900;cursor:pointer}
+.paynote{margin-top:12px!important;color:#aab7ca!important;font-size:11px!important}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(8px);background:#fff;color:#071326;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:900;opacity:0;pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:430px){.wrap{margin-top:22px}.profile{padding-left:16px;padding-right:16px}.mini,.social-mini{grid-template-columns:1fr}.cal-wrap,.calendly-inline-widget{min-height:720px;height:720px}}
 </style>
 </head>
 <body>
@@ -47,7 +62,7 @@ a{text-decoration:none;color:inherit}
 <div class="loc">Custom Nail Artist</div>
 <p class="tagline">Custom nail designs made to suit your style.</p>
 <div class="buttons">
-<a class="action primary" href="https://calendly.com/lashoutandnailit23/new-meeting" target="_blank" rel="noopener noreferrer"><strong>◷</strong>Book an Appointment</a>
+<button class="action primary" id="bookBtn" type="button"><strong>◷</strong>Book an Appointment</button>
 <a class="action" href="mailto:lashoutandnailit23@gmail.com?subject=Nail%20Enquiry"><strong>✉</strong>Contact Me</a>
 <a class="action" href="tel:0466563931"><strong>☎</strong>Call 0466 563 931</a>
 <a class="action" href="sms:0466563931"><strong>💬</strong>Text 0466 563 931</a>
@@ -59,11 +74,46 @@ a{text-decoration:none;color:inherit}
 <div class="info"><b>About</b><span>Custom nail artist. Send through your design for a quote.</span></div>
 </div>
 <div class="notice">Appointments are 3 hours. A $20 deposit is required after booking. Weekend fees apply.</div>
-<div class="nospots">No booking spots available? Message on <a href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer">Instagram</a> or <a href="http://facebook.com/share/1JarPXKgDD" target="_blank" rel="noopener noreferrer">Facebook</a>.</div>
 <div class="powered">Powered by TapGrowth</div>
 </div>
 </section>
+
+<section class="booking" id="bookingSection" aria-label="Book a nail appointment">
+<div class="booking-head">
+<h2>Book your appointment</h2>
+<p>Choose an available time below. Your booking stays inside this TapGrowth page.</p>
+<div class="chips"><span class="chip">Tuesday–Saturday</span><span class="chip">9am–6pm</span><span class="chip">3-hour appointments</span></div>
+</div>
+<div class="cal-wrap"><div class="calendly-inline-widget" data-url="https://calendly.com/lashoutandnailit23/new-meeting?hide_gdpr_banner=1&background_color=ffffff&text_color=071326&primary_color=2f82ff" style="min-width:320px;height:760px;"></div></div>
+<div class="no-spots">
+<b>No booking spots available?</b>
+<p>Send a private message on Instagram or Facebook and we’ll see if another time can be arranged.</p>
+<div class="social-mini"><a href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer">Message on Instagram</a><a href="http://facebook.com/share/1JarPXKgDD" target="_blank" rel="noopener noreferrer">Message on Facebook</a></div>
+</div>
+</section>
+
+<section class="deposit" id="depositSection" aria-live="polite">
+<div class="check">✓</div>
+<h2>Booking received</h2>
+<p>Your appointment has been submitted. A $20 deposit is now required to secure the booking.</p>
+<div class="payrow"><div><div class="paylabel">Amount</div><div class="payvalue">$20.00</div></div></div>
+<div class="payrow"><div><div class="paylabel">PayID</div><div class="payvalue">0466 563 931</div></div><button class="copy" type="button" data-copy="0466563931">Copy</button></div>
+<div class="payrow"><div><div class="paylabel">Name to confirm</div><div class="payvalue">T McDonald</div></div><button class="copy" type="button" data-copy="T McDonald">Copy</button></div>
+<p class="paynote">Please use your name as the payment reference. The appointment address and directions will be provided privately once the deposit is confirmed.</p>
+</section>
 </main>
+<div class="toast" id="toast">Copied</div>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script src="/assets/analytics.js"></script>
+<script>
+const bookBtn=document.getElementById('bookBtn');
+const bookingSection=document.getElementById('bookingSection');
+const depositSection=document.getElementById('depositSection');
+const toast=document.getElementById('toast');
+bookBtn.addEventListener('click',()=>{bookingSection.classList.add('show');setTimeout(()=>bookingSection.scrollIntoView({behavior:'smooth',block:'start'}),50);});
+function isCalendlyEvent(e){return e.origin==='https://calendly.com'&&e.data&&e.data.event&&e.data.event.indexOf('calendly.')===0;}
+window.addEventListener('message',function(e){if(!isCalendlyEvent(e))return;if(e.data.event==='calendly.event_scheduled'){depositSection.classList.add('show');setTimeout(()=>depositSection.scrollIntoView({behavior:'smooth',block:'start'}),250);}});
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(btn.dataset.copy);toast.textContent='Copied';}catch(e){toast.textContent='Press and hold to copy';}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600);}));
+</script>
 </body>
 </html>
