@@ -13,47 +13,26 @@
 body{margin:0;background:linear-gradient(180deg,#020812,#071326);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
 a{text-decoration:none;color:inherit}button{font:inherit}
 .top{position:sticky;top:0;z-index:10;background:rgba(2,8,18,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.topin{max-width:760px;margin:auto;height:62px;padding:0 18px;display:flex;align-items:center}
-.brand{font-weight:950;font-size:22px;letter-spacing:-.8px}.brand span{color:var(--blue)}
-.wrap{width:min(100% - 28px,540px);margin:32px auto 48px}
-.phone{background:#0b1526;border:1px solid rgba(255,255,255,.13);box-shadow:0 30px 80px rgba(0,0,0,.38);border-radius:30px;overflow:hidden}
-.cover{height:122px;background:radial-gradient(circle at 20% 10%,rgba(47,130,255,.45),transparent 34%),linear-gradient(135deg,#16284a,#071326)}
-.profile{padding:0 22px 22px;text-align:center}
-.avatar{width:92px;height:92px;margin:-46px auto 12px;border-radius:50%;background:#fff;border:5px solid #0b1526;overflow:hidden;display:grid;place-items:center}
-.avatar img{width:100%;height:100%;object-fit:cover;display:block}
-.profile h1{font-size:27px;letter-spacing:-1px;margin:0}
-.profile .loc{color:#8fa0b7;font-size:12px;margin-top:5px}
-.profile .tagline{color:#cdd7e5;font-size:14px;line-height:1.45;margin:15px auto 18px;max-width:360px}
-.buttons{display:grid;gap:10px}
-.action{width:100%;min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;color:#fff;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);cursor:pointer}
-.action strong{width:30px;color:#88baff;font-size:16px}.action.primary{background:var(--blue);border-color:var(--blue);color:#fff}.action.primary strong{color:#fff}
-.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.info{background:#0f1d32;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}
-.info b{display:block;font-size:12px;margin-bottom:4px}.info span{font-size:11px;color:#9eacc0;line-height:1.4}
-.notice{margin-top:10px;border:1px solid rgba(47,130,255,.20);background:rgba(47,130,255,.08);border-radius:12px;padding:10px 12px;color:#91beff;font-size:11px;font-weight:800;line-height:1.5}
-.powered{font-size:10px;color:#708199;margin-top:18px}
-.booking{display:none;margin-top:18px;border:1px solid var(--line);border-radius:20px;background:#0b1526;overflow:hidden}.booking.show{display:block}
-.booking-head{padding:18px;border-bottom:1px solid var(--line);text-align:left}.booking-head h2{font-size:18px;margin:0 0 6px}.booking-head p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.chip{font-size:10px;font-weight:850;color:#91beff;border:1px solid rgba(47,130,255,.22);background:rgba(47,130,255,.08);padding:6px 9px;border-radius:999px}
-.rules{padding:16px;text-align:left;background:#0f1d32;border-bottom:1px solid var(--line)}
-.rules h3{font-size:15px;margin:0 0 11px}.rule{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:11px;line-height:1.5;color:#c4cfdd}.rule:first-of-type{border-top:0;padding-top:0}.rule .icon{width:20px;flex:0 0 20px;text-align:center}
-.agree{margin-top:13px;border:1px solid rgba(47,130,255,.22);background:rgba(47,130,255,.07);border-radius:12px;padding:12px}.agree label{display:flex;gap:9px;align-items:flex-start;font-size:11px;line-height:1.45;font-weight:800;color:#dce8f7}.agree input{margin-top:2px;accent-color:#2f82ff}
-.continue{margin-top:10px;width:100%;min-height:48px;border:0;border-radius:12px;background:#2f82ff;color:#fff;font-weight:900;cursor:pointer}.continue:disabled{opacity:.42;cursor:not-allowed}
-.cal-wrap{display:none;background:#fff;min-height:760px}.cal-wrap.show{display:block}.calendly-inline-widget{min-width:320px;height:760px}
-.no-spots{display:none;padding:15px 16px;border-top:1px solid var(--line);background:#0f1d32;text-align:center}.no-spots.show{display:block}.no-spots b{display:block;font-size:12px;margin-bottom:6px}.no-spots p{font-size:11px;line-height:1.45;color:var(--muted);margin:0 0 11px}
-.social-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-mini a{min-height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:#16263f;font-size:11px;font-weight:900;color:#dce8f7}
-.deposit{display:none;margin-top:18px;border:1px solid rgba(47,130,255,.35);background:linear-gradient(180deg,#0d1d35,#0b1526);border-radius:20px;padding:18px;text-align:left}.deposit.show{display:block}
-.check{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(47,130,255,.16);color:#8cbdff;font-weight:950;margin-bottom:12px}.deposit h2{font-size:19px;margin:0 0 7px}.deposit>p{font-size:12px;color:var(--muted);line-height:1.55;margin:0 0 14px}
-.payrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-top:1px solid var(--line)}.paylabel{font-size:10px;color:#8fa0b7}.payvalue{font-size:14px;font-weight:900;margin-top:2px}.copy{border:1px solid var(--line);background:#16263f;color:#9dc4ff;border-radius:9px;padding:8px 10px;font-size:10px;font-weight:900;cursor:pointer}
-.deadline{margin:12px 0 0;border:1px solid rgba(255,255,255,.12);background:#111f37;border-radius:12px;padding:12px;font-size:11px;line-height:1.55;color:#dce8f7}.deadline b{color:#fff}.proof-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.proof-actions a{min-height:42px;border-radius:11px;border:1px solid var(--line);background:#16263f;color:#dce8f7;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:900}
-.paynote{margin-top:12px!important;color:#aab7ca!important;font-size:11px!important}.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(8px);background:#fff;color:#071326;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:900;opacity:0;pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(max-width:430px){.wrap{margin-top:22px}.profile{padding-left:16px;padding-right:16px}.mini,.social-mini,.proof-actions{grid-template-columns:1fr}.cal-wrap,.calendly-inline-widget{min-height:720px;height:720px}}
+.topin{max-width:760px;margin:auto;height:62px;padding:0 18px;display:flex;align-items:center}.brand{font-weight:950;font-size:22px;letter-spacing:-.8px}.brand span{color:var(--blue)}
+.wrap{width:min(100% - 28px,540px);margin:28px auto 48px}.phone{background:#0b1526;border:1px solid rgba(255,255,255,.13);box-shadow:0 30px 80px rgba(0,0,0,.38);border-radius:30px;overflow:hidden}
+.cover{height:160px;position:relative;background:#111f37;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover;display:block}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,19,38,.02),rgba(7,19,38,.34))}
+.profile{padding:0 22px 22px;text-align:center}.avatar{width:92px;height:92px;margin:-46px auto 12px;border-radius:50%;background:#fff;border:5px solid #0b1526;overflow:hidden;display:grid;place-items:center;position:relative;z-index:2}.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.profile h1{font-size:27px;letter-spacing:-1px;margin:0}.profile .loc{color:#8fa0b7;font-size:12px;margin-top:5px}.profile .tagline{color:#cdd7e5;font-size:14px;line-height:1.45;margin:15px auto 18px;max-width:360px}
+.buttons{display:grid;gap:10px}.action{width:100%;min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;color:#fff;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);cursor:pointer}.action strong{width:30px;color:#88baff;font-size:16px}.action.primary{background:var(--blue);border-color:var(--blue)}.action.primary strong{color:#fff}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.info{background:#0f1d32;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}.info b{display:block;font-size:12px;margin-bottom:4px}.info span{font-size:11px;color:#9eacc0;line-height:1.4}.notice{margin-top:10px;border:1px solid rgba(47,130,255,.20);background:rgba(47,130,255,.08);border-radius:12px;padding:10px 12px;color:#91beff;font-size:11px;font-weight:800;line-height:1.5}.powered{font-size:10px;color:#708199;margin-top:18px}
+.booking{display:none;margin-top:18px;border:1px solid var(--line);border-radius:20px;background:#0b1526;overflow:hidden}.booking.show{display:block}.booking-head{padding:18px;border-bottom:1px solid var(--line);text-align:left}.booking-head h2{font-size:18px;margin:0 0 6px}.booking-head p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.chip{font-size:10px;font-weight:850;color:#91beff;border:1px solid rgba(47,130,255,.22);background:rgba(47,130,255,.08);padding:6px 9px;border-radius:999px}
+.rules{padding:16px;text-align:left;background:#0f1d32;border-bottom:1px solid var(--line)}.rules h3{font-size:15px;margin:0 0 11px}.rule{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:11px;line-height:1.5;color:#c4cfdd}.rule:first-of-type{border-top:0;padding-top:0}.rule .icon{width:20px;flex:0 0 20px;text-align:center}.agree{margin-top:13px;border:1px solid rgba(47,130,255,.22);background:rgba(47,130,255,.07);border-radius:12px;padding:12px}.agree label{display:flex;gap:9px;align-items:flex-start;font-size:11px;line-height:1.45;font-weight:800;color:#dce8f7}.agree input{margin-top:2px;accent-color:#2f82ff}.continue{margin-top:10px;width:100%;min-height:48px;border:0;border-radius:12px;background:#2f82ff;color:#fff;font-weight:900;cursor:pointer}.continue:disabled{opacity:.42;cursor:not-allowed}
+.cal-wrap{display:none;background:#fff;min-height:760px}.cal-wrap.show{display:block}.calendly-inline-widget{min-width:320px;height:760px}.no-spots{display:none;padding:15px 16px;border-top:1px solid var(--line);background:#0f1d32;text-align:center}.no-spots.show{display:block}.no-spots b{display:block;font-size:12px;margin-bottom:6px}.no-spots p{font-size:11px;line-height:1.45;color:var(--muted);margin:0 0 11px}.social-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-mini a{min-height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:#16263f;font-size:11px;font-weight:900;color:#dce8f7}
+.deposit{display:none;margin-top:18px;border:1px solid rgba(47,130,255,.35);background:linear-gradient(180deg,#0d1d35,#0b1526);border-radius:20px;padding:18px;text-align:left}.deposit.show{display:block}.check{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(47,130,255,.16);color:#8cbdff;font-weight:950;margin-bottom:12px}.deposit h2{font-size:19px;margin:0 0 7px}.deposit>p{font-size:12px;color:var(--muted);line-height:1.55;margin:0 0 14px}.payrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-top:1px solid var(--line)}.paylabel{font-size:10px;color:#8fa0b7}.payvalue{font-size:14px;font-weight:900;margin-top:2px}.copy{border:1px solid var(--line);background:#16263f;color:#9dc4ff;border-radius:9px;padding:8px 10px;font-size:10px;font-weight:900;cursor:pointer}.deadline{margin:12px 0 0;border:1px solid rgba(255,255,255,.12);background:#111f37;border-radius:12px;padding:12px;font-size:11px;line-height:1.55;color:#dce8f7}.deadline b{color:#fff}.proof-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.proof-actions a{min-height:44px;border-radius:11px;border:1px solid var(--line);background:#16263f;color:#dce8f7;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:900;padding:8px}.paynote{margin-top:12px!important;color:#aab7ca!important;font-size:11px!important}.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(8px);background:#fff;color:#071326;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:900;opacity:0;pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:430px){.wrap{margin-top:20px}.profile{padding-left:16px;padding-right:16px}.mini,.social-mini,.proof-actions{grid-template-columns:1fr}.cover{height:138px}.cal-wrap,.calendly-inline-widget{min-height:720px;height:720px}}
 </style>
 </head>
 <body>
 <header class="top"><div class="topin"><a class="brand" href="/">Tap<span>Growth</span></a></div></header>
 <main class="wrap">
-<section class="phone"><div class="cover"></div><div class="profile">
+<section class="phone">
+<div class="cover"><img src="./cover.jpg" alt="Lash Out & Nail It nail designs"></div>
+<div class="profile">
 <div class="avatar"><img src="./IMG_1866.jpeg" alt="Lash Out & Nail It logo"></div>
 <h1>Lash Out &amp; Nail It</h1><div class="loc">Custom Nail Artist</div><p class="tagline">Custom nail designs made to suit your style.</p>
 <div class="buttons">
@@ -66,19 +45,21 @@ a{text-decoration:none;color:inherit}button{font:inherit}
 </div>
 <div class="mini"><div class="info"><b>Opening Hours</b><span>Tuesday–Saturday<br>9am–6pm</span></div><div class="info"><b>About</b><span>Custom nail artist. Send through your design for a quote.</span></div></div>
 <div class="notice">Appointments are 3 hours. A $20 non-refundable deposit is required after booking. Weekend fees apply.</div>
-<div class="powered">Powered by TapGrowth</div></div></section>
+<div class="powered">Powered by TapGrowth</div>
+</div>
+</section>
 
 <section class="booking" id="bookingSection" aria-label="Book a nail appointment">
-<div class="booking-head"><h2>Before you book</h2><p>Please read and agree to the booking rules before choosing an appointment.</p><div class="chips"><span class="chip">Tuesday–Saturday</span><span class="chip">9am–6pm</span><span class="chip">3-hour appointments</span></div></div>
-<div class="rules">
+<div class="booking-head"><h2>Before you book</h2><p>Please read every rule below and confirm you agree before choosing an appointment time.</p><div class="chips"><span class="chip">Tuesday–Saturday</span><span class="chip">9am–6pm</span><span class="chip">3-hour appointments</span></div></div>
+<div class="rules" id="rulesBlock">
 <h3>Booking Rules</h3>
 <div class="rule"><span class="icon">💰</span><span>The $20 booking deposit is <b>non-refundable</b>.</span></div>
-<div class="rule"><span class="icon">⏰</span><span>Please arrive on time or up to 5 minutes early. A late fee applies after 10 minutes. Any lateness must be discussed beforehand. Appointments are cancelled after 25 minutes late.</span></div>
-<div class="rule"><span class="icon">✨</span><span>Removal of any existing product must be discussed before your appointment and will be charged according to the type of removal required.</span></div>
+<div class="rule"><span class="icon">⏰</span><span>Please arrive on time or up to 5 minutes early. A late fee applies after 10 minutes. Any lateness must be discussed beforehand. Appointments automatically cancel after 25 minutes late.</span></div>
+<div class="rule"><span class="icon">✨</span><span>Removal of any existing product must be discussed beforehand and will be charged according to the type of removal required.</span></div>
 <div class="rule"><span class="icon">🚫</span><span>No extra guests, including partners or boyfriends. This is a female-only environment.</span></div>
 <div class="rule"><span class="icon">👶</span><span>Children may only attend if they can be fully supervised at all times.</span></div>
 <div class="rule"><span class="icon">🤍</span><span>As I am currently pregnant, please do not attend if you are feeling unwell, have recently been sick, or have symptoms on arrival. If symptoms are present, I will not be able to proceed with the service.</span></div>
-<div class="agree"><label><input id="agreeBox" type="checkbox"> <span>I have read and agree to the booking rules above.</span></label><button class="continue" id="continueBtn" type="button" disabled>Agree &amp; Choose a Time</button></div>
+<div class="agree"><label><input id="agreeBox" type="checkbox"> <span>I have read and agree to all booking rules above.</span></label><button class="continue" id="continueBtn" type="button" disabled>Agree &amp; Choose a Time</button></div>
 </div>
 <div class="cal-wrap" id="calWrap"><div class="calendly-inline-widget" data-url="https://calendly.com/lashoutandnailit23/new-meeting?hide_gdpr_banner=1&background_color=ffffff&text_color=071326&primary_color=2f82ff" style="min-width:320px;height:760px;"></div></div>
 <div class="no-spots" id="noSpots"><b>No booking spots available?</b><p>Send a private message on Instagram or Facebook and we’ll see if another time can be arranged.</p><div class="social-mini"><a href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer">Message on Instagram</a><a href="http://facebook.com/share/1JarPXKgDD" target="_blank" rel="noopener noreferrer">Message on Facebook</a></div></div>
@@ -89,21 +70,64 @@ a{text-decoration:none;color:inherit}button{font:inherit}
 <div class="payrow"><div><div class="paylabel">Amount</div><div class="payvalue">$20.00</div></div></div>
 <div class="payrow"><div><div class="paylabel">PayID</div><div class="payvalue">0466 563 931</div></div><button class="copy" type="button" data-copy="0466563931">Copy</button></div>
 <div class="payrow"><div><div class="paylabel">Name to confirm</div><div class="payvalue">T McDonald</div></div><button class="copy" type="button" data-copy="T McDonald">Copy</button></div>
-<div class="deadline"><b>Payment proof required within 1 hour.</b><br>After paying, please send a screenshot of the payment. If payment proof is not received within 1 hour of booking, the appointment may be cancelled and the time made available again.</div>
-<div class="proof-actions"><a href="sms:0466563931?body=Hi%2C%20I%27ve%20booked%20my%20nail%20appointment%20and%20I%27m%20sending%20my%20%2420%20deposit%20screenshot.%20My%20name%20is%20" >Send Screenshot by Text</a><a href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer">Send via Instagram</a></div>
+<div class="deadline"><b>Send proof within 1 hour or the appointment may be cancelled.</b><br><br>After paying, send a screenshot proving the $20 deposit was paid. In the same message, please also send the nail design/reference photo you want and any preferences or changes you would like. This helps confirm the correct service and preparation before your appointment.</div>
+<div class="proof-actions"><a href="sms:0466563931?body=Hi%2C%20I%27ve%20booked%20my%20nail%20appointment%20and%20paid%20the%20%2420%20deposit.%20I%27m%20sending%20my%20payment%20screenshot%2C%20my%20nail%20design%2Freference%20photo%20and%20any%20preferences%20or%20changes%20I%20want.%20My%20name%20is%3A%20">Send by Text</a><a href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer">Send via Instagram</a></div>
 <p class="paynote">Please use your name as the payment reference. The appointment address and directions will be provided privately once the deposit is confirmed.</p>
 </section>
 </main>
 <div class="toast" id="toast">Copied</div>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script><script src="/assets/analytics.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="/assets/analytics.js"></script>
 <script>
-const bookBtn=document.getElementById('bookBtn'),bookingSection=document.getElementById('bookingSection'),depositSection=document.getElementById('depositSection'),toast=document.getElementById('toast'),agreeBox=document.getElementById('agreeBox'),continueBtn=document.getElementById('continueBtn'),calWrap=document.getElementById('calWrap'),noSpots=document.getElementById('noSpots');
-bookBtn.addEventListener('click',()=>{bookingSection.classList.add('show');setTimeout(()=>bookingSection.scrollIntoView({behavior:'smooth',block:'start'}),50);});
-agreeBox.addEventListener('change',()=>{continueBtn.disabled=!agreeBox.checked;});
-continueBtn.addEventListener('click',()=>{if(!agreeBox.checked)return;calWrap.classList.add('show');noSpots.classList.add('show');setTimeout(()=>calWrap.scrollIntoView({behavior:'smooth',block:'start'}),80);});
-function isCalendlyEvent(e){return e.origin==='https://calendly.com'&&e.data&&e.data.event&&e.data.event.indexOf('calendly.')===0;}
-window.addEventListener('message',function(e){if(!isCalendlyEvent(e))return;if(e.data.event==='calendly.event_scheduled'){depositSection.classList.add('show');setTimeout(()=>depositSection.scrollIntoView({behavior:'smooth',block:'start'}),250);}});
-document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(btn.dataset.copy);toast.textContent='Copied';}catch(e){toast.textContent='Press and hold to copy';}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600);}));
+(function(){
+  const bookBtn=document.getElementById('bookBtn');
+  const bookingSection=document.getElementById('bookingSection');
+  const agreeBox=document.getElementById('agreeBox');
+  const continueBtn=document.getElementById('continueBtn');
+  const calWrap=document.getElementById('calWrap');
+  const noSpots=document.getElementById('noSpots');
+  const depositSection=document.getElementById('depositSection');
+  const toast=document.getElementById('toast');
+
+  function showBookingRules(){
+    bookingSection.classList.add('show');
+    calWrap.classList.remove('show');
+    noSpots.classList.remove('show');
+    agreeBox.checked=false;
+    continueBtn.disabled=true;
+    setTimeout(()=>bookingSection.scrollIntoView({behavior:'smooth',block:'start'}),60);
+  }
+
+  bookBtn.addEventListener('click',showBookingRules);
+
+  agreeBox.addEventListener('change',function(){
+    continueBtn.disabled=!agreeBox.checked;
+  });
+
+  continueBtn.addEventListener('click',function(){
+    if(!agreeBox.checked)return;
+    calWrap.classList.add('show');
+    noSpots.classList.add('show');
+    setTimeout(()=>calWrap.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  });
+
+  window.addEventListener('message',function(e){
+    if(e.origin!=='https://calendly.com')return;
+    if(e.data && e.data.event==='calendly.event_scheduled'){
+      depositSection.classList.add('show');
+      setTimeout(()=>depositSection.scrollIntoView({behavior:'smooth',block:'start'}),250);
+    }
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',async function(){
+      try{await navigator.clipboard.writeText(btn.dataset.copy);toast.textContent='Copied';}
+      catch(err){toast.textContent='Press and hold to copy';}
+      toast.classList.add('show');
+      setTimeout(()=>toast.classList.remove('show'),1600);
+    });
+  });
+})();
 </script>
 </body>
 </html>
