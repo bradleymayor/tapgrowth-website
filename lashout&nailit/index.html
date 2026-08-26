@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071326">
 <title>Lash Out & Nail It</title>
-<meta name="description" content="Lash Out & Nail It — custom nail artist, contact details, social links and directions.">
+<meta name="description" content="Lash Out & Nail It — custom nail artist, contact details, social links and booking deposit information.">
 <style>
 :root{--navy:#071326;--card:#0d1b31;--blue:#2f82ff;--line:rgba(255,255,255,.10);--muted:#aab7ca;--white:#fff}
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(180deg,#020812,#071326);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
 a{text-decoration:none;color:inherit}
+button{font:inherit}
 .top{position:sticky;top:0;z-index:10;background:rgba(2,8,18,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .topin{max-width:760px;margin:auto;height:62px;padding:0 18px;display:flex;align-items:center}
 .brand{font-weight:950;font-size:22px;letter-spacing:-.8px}.brand span{color:var(--blue)}
@@ -24,13 +25,22 @@ a{text-decoration:none;color:inherit}
 .profile .loc{color:#8fa0b7;font-size:12px;margin-top:5px}
 .profile .tagline{color:#cdd7e5;font-size:14px;line-height:1.45;margin:15px auto 18px;max-width:360px}
 .buttons{display:grid;gap:10px}
-.action{min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.action{width:100%;min-height:54px;border-radius:14px;border:1px solid var(--line);background:#111f37;color:#fff;display:flex;align-items:center;padding:0 16px;text-align:left;font-weight:850;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);cursor:pointer}
 .action strong{width:30px;color:#88baff;font-size:16px}.action.primary{background:var(--blue);border-color:var(--blue);color:#fff}.action.primary strong{color:#fff}
+.paybox{display:none;margin-top:10px;background:#0f1d32;border:1px solid rgba(47,130,255,.28);border-radius:15px;padding:15px;text-align:left}
+.paybox.show{display:block}
+.paybox h2{font-size:14px;margin:0 0 10px}
+.payrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.payrow:first-of-type{border-top:0;padding-top:0}
+.paylabel{font-size:11px;color:#8fa0b7}.payvalue{font-size:13px;font-weight:900;margin-top:2px}
+.copy{border:1px solid var(--line);background:#16263f;color:#9dc4ff;border-radius:9px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer}
+.paynote{margin:10px 0 0;color:#aab7ca;font-size:11px;line-height:1.5}
 .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .info{background:#0f1d32;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}
 .info b{display:block;font-size:12px;margin-bottom:4px}.info span{font-size:11px;color:#9eacc0;line-height:1.4}
 .notice{margin-top:10px;border:1px solid rgba(47,130,255,.20);background:rgba(47,130,255,.08);border-radius:12px;padding:9px 12px;color:#91beff;font-size:11px;font-weight:800}
 .powered{font-size:10px;color:#708199;margin-top:18px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(8px);background:#fff;color:#071326;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:900;opacity:0;pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(max-width:430px){.wrap{margin-top:22px}.profile{padding-left:16px;padding-right:16px}.mini{grid-template-columns:1fr}}
 </style>
 </head>
@@ -45,12 +55,19 @@ a{text-decoration:none;color:inherit}
 <div class="loc">Custom Nail Artist</div>
 <p class="tagline">Custom nail designs made to suit your style.</p>
 <div class="buttons">
-<a class="action primary" href="mailto:lashoutandnailit23@gmail.com?subject=Nail%20Enquiry"><strong>✉</strong>Contact Me</a>
+<button class="action primary" id="payBtn" type="button"><strong>$</strong>Pay $20 Booking Deposit</button>
+<div class="paybox" id="payBox">
+<h2>Pay by PayID</h2>
+<div class="payrow"><div><div class="paylabel">Amount</div><div class="payvalue">$20.00</div></div></div>
+<div class="payrow"><div><div class="paylabel">PayID</div><div class="payvalue">0466 563 931</div></div><button class="copy" type="button" data-copy="0466563931">Copy</button></div>
+<div class="payrow"><div><div class="paylabel">Name to confirm</div><div class="payvalue">T McDonald</div></div><button class="copy" type="button" data-copy="T McDonald">Copy</button></div>
+<p class="paynote">Please use your name as the payment reference. Once the $20 deposit is confirmed, the appointment address and directions will be provided privately.</p>
+</div>
+<a class="action" href="mailto:lashoutandnailit23@gmail.com?subject=Nail%20Enquiry"><strong>✉</strong>Contact Me</a>
 <a class="action" href="tel:0466563931"><strong>☎</strong>Call 0466 563 931</a>
 <a class="action" href="sms:0466563931"><strong>💬</strong>Text 0466 563 931</a>
 <a class="action" href="https://www.instagram.com/lashoutandnailit?igsi=bjRmaGZ2aXo2MXAy" target="_blank" rel="noopener noreferrer"><strong>◎</strong>Instagram</a>
 <a class="action" href="http://facebook.com/share/1JarPXKgDD" target="_blank" rel="noopener noreferrer"><strong>f</strong>Facebook</a>
-<a class="action" href="https://maps.apple/p/CVq5Pfrt~oEX0B" target="_blank" rel="noopener noreferrer"><strong>⌖</strong>Get Directions</a>
 <a class="action" href="mailto:lashoutandnailit23@gmail.com"><strong>✉</strong>lashoutandnailit23@gmail.com</a>
 </div>
 <div class="mini">
@@ -62,6 +79,18 @@ a{text-decoration:none;color:inherit}
 </div>
 </section>
 </main>
+<div class="toast" id="toast">Copied</div>
 <script src="/assets/analytics.js"></script>
+<script>
+const payBtn=document.getElementById('payBtn');
+const payBox=document.getElementById('payBox');
+const toast=document.getElementById('toast');
+payBtn.addEventListener('click',()=>payBox.classList.toggle('show'));
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(btn.dataset.copy);toast.textContent='Copied';}
+  catch(e){toast.textContent='Press and hold to copy';}
+  toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600);
+}));
+</script>
 </body>
 </html>
