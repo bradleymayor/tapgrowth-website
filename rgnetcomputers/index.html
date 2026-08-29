@@ -61,7 +61,7 @@
     .profile{padding:0 20px 24px;text-align:center}
     .logo{
       width:min(88%,350px);
-      aspect-ratio:3/2;
+      min-height:170px;
       margin:-64px auto 14px;
       border-radius:22px;
       overflow:hidden;
@@ -73,8 +73,34 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      padding:24px 18px 18px;
     }
-    .logo img{display:block;width:100%;height:100%;object-fit:contain}
+    .logo-art{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .logo-swoosh{position:absolute;width:74%;height:42px;right:3%;top:-9px;border-top:6px solid #3449b8;border-radius:50%;transform:rotate(2deg);opacity:.98}
+    .logo-main{
+      position:relative;
+      z-index:2;
+      margin-top:6px;
+      font-family:Impact,"Arial Black",Arial,sans-serif;
+      font-size:48px;
+      line-height:.95;
+      font-weight:950;
+      font-style:italic;
+      letter-spacing:-2px;
+      color:#f0172c;
+      -webkit-text-stroke:2px #111;
+      text-shadow:0 2px 0 #fff,0 4px 0 rgba(0,0,0,.10);
+      white-space:nowrap;
+    }
+    .logo-sub{
+      margin-top:9px;
+      font-size:29px;
+      line-height:1;
+      font-weight:850;
+      font-style:italic;
+      letter-spacing:-1px;
+      color:#2f45b8;
+    }
     h1{font-size:29px;letter-spacing:-1px;margin:0;font-weight:950}
     .loc{color:#8fa0b7;font-size:12px;margin-top:6px}
     .tagline{color:#cdd7e5;font-size:14px;line-height:1.5;margin:15px auto 18px;max-width:390px}
@@ -150,7 +176,9 @@
     @media(max-width:430px){
       .wrap{margin-top:18px}
       .profile{padding-left:15px;padding-right:15px}
-      .logo{width:92%;margin-top:-58px}
+      .logo{width:92%;min-height:156px;margin-top:-58px}
+      .logo-main{font-size:42px}
+      .logo-sub{font-size:25px}
       h1{font-size:26px}
     }
   </style>
@@ -160,7 +188,13 @@
     <section class="phone">
       <div class="cover"></div>
       <div class="profile">
-        <div class="logo"><img src="rg-net-computers-logo.webp" alt="RG NET Computers logo"></div>
+        <div class="logo" role="img" aria-label="RG NET Computers logo">
+          <div class="logo-art">
+            <span class="logo-swoosh"></span>
+            <div class="logo-main">RG NET</div>
+            <div class="logo-sub">Computers</div>
+          </div>
+        </div>
         <h1>RG NET Computers</h1>
         <div class="loc">14 Mt. Druitt Rd · Mt. Druitt NSW 2770</div>
         <p class="tagline">Computer support, repairs, gaming PC services, upgrades and reliable technical help for homes and businesses.</p>
