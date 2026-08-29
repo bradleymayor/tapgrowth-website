@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>RG NET Computers | Mt Druitt</title>
+  <meta name="description" content="RG NET Computers in Mt Druitt provides computer diagnostics, gaming PC support, device installation, networking, on-site services, PC parts and virus removal.">
+  <meta name="theme-color" content="#071326">
+  <style>
+    :root{
+      --navy:#071326;
+      --navy2:#0c1b32;
+      --card:#0d1b31;
+      --red:#ef1b2d;
+      --red2:#ff3042;
+      --blue:#2949c7;
+      --blue2:#4575ff;
+      --line:rgba(255,255,255,.10);
+      --muted:#aab7ca;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 10% 0%,rgba(41,73,199,.22),transparent 32%),
+        radial-gradient(circle at 100% 20%,rgba(239,27,45,.14),transparent 30%),
+        linear-gradient(180deg,#020812,#071326 55%,#030914);
+      color:var(--white);
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      min-height:100vh;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(100% - 28px,540px);margin:28px auto 42px}
+    .phone{
+      background:#0b1526;
+      border:1px solid rgba(255,255,255,.13);
+      box-shadow:0 30px 80px rgba(0,0,0,.42);
+      border-radius:30px;
+      overflow:hidden;
+    }
+    .cover{
+      height:126px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(69,117,255,.55),transparent 34%),
+        radial-gradient(circle at 90% 20%,rgba(255,48,66,.38),transparent 32%),
+        linear-gradient(135deg,#16284a,#071326);
+    }
+    .cover:after{
+      content:"";
+      position:absolute;
+      width:120%;height:70px;
+      left:-10%;bottom:-42px;
+      border:4px solid rgba(69,117,255,.42);
+      border-radius:50%;
+      transform:rotate(-4deg);
+    }
+    .profile{padding:0 20px 24px;text-align:center}
+    .logo{
+      width:min(88%,350px);
+      aspect-ratio:3/2;
+      margin:-64px auto 14px;
+      border-radius:22px;
+      overflow:hidden;
+      background:#fff;
+      border:5px solid #0b1526;
+      box-shadow:0 12px 38px rgba(0,0,0,.34);
+      position:relative;
+      z-index:2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .logo img{display:block;width:100%;height:100%;object-fit:contain}
+    h1{font-size:29px;letter-spacing:-1px;margin:0;font-weight:950}
+    .loc{color:#8fa0b7;font-size:12px;margin-top:6px}
+    .tagline{color:#cdd7e5;font-size:14px;line-height:1.5;margin:15px auto 18px;max-width:390px}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;
+      margin:0 auto 18px;
+      border:1px solid rgba(69,117,255,.28);
+      background:rgba(69,117,255,.08);
+      color:#a9c1ff;
+      padding:7px 11px;border-radius:999px;
+      font-size:10px;font-weight:900;letter-spacing:.65px;text-transform:uppercase;
+    }
+    .buttons{display:grid;gap:10px}
+    .action{
+      min-height:58px;border-radius:15px;border:1px solid var(--line);
+      background:#111f37;display:flex;align-items:center;padding:0 16px;
+      text-align:left;font-weight:850;font-size:14px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .action:hover{transform:translateY(-1px);border-color:rgba(69,117,255,.35);background:#142542}
+    .action:active{transform:scale(.99)}
+    .action .icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;margin-right:11px;background:rgba(255,255,255,.07);font-size:17px;flex:0 0 34px}
+    .action .copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+    .action .copy b{font-size:14px}
+    .action .copy span{font-size:10.5px;color:#98a8bd;font-weight:650}
+    .action .arrow{margin-left:auto;color:#8393a9;font-size:21px;padding-left:10px}
+    .action.primary{
+      color:#fff;border-color:transparent;
+      background:linear-gradient(135deg,var(--red),var(--red2));
+      box-shadow:0 12px 28px rgba(239,27,45,.18);
+    }
+    .action.primary .icon{background:rgba(255,255,255,.15)}
+    .action.primary .copy span,.action.primary .arrow{color:rgba(255,255,255,.76)}
+    .section{
+      margin-top:14px;
+      background:#0f1d32;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:17px;
+      text-align:left;
+    }
+    .section h2{font-size:16px;margin:0 0 8px;letter-spacing:-.2px}
+    .section p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
+    .freecheck{
+      margin-top:14px;
+      border:1px solid rgba(69,117,255,.28);
+      background:linear-gradient(135deg,rgba(41,73,199,.18),rgba(69,117,255,.07));
+      border-radius:18px;
+      padding:16px;
+      text-align:left;
+    }
+    .freecheck .eyebrow{font-size:9px;font-weight:950;color:#a9c1ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}
+    .freecheck h2{font-size:17px;margin:0 0 6px}
+    .freecheck p{font-size:12px;color:#b7c3d4;line-height:1.55;margin:0}
+    .services{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+    .service{
+      font-size:10.5px;font-weight:800;
+      border:1px solid rgba(69,117,255,.24);
+      background:rgba(69,117,255,.07);
+      color:#b6c9ff;
+      padding:7px 9px;border-radius:999px;
+    }
+    .hours{display:grid;gap:8px;margin-top:8px}
+    .hourrow{display:flex;justify-content:space-between;gap:20px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
+    .hourrow:last-child{border-bottom:0;padding-bottom:0}
+    .hourrow span:first-child{color:#d9e1ec;font-weight:750}
+    .hourrow span:last-child{color:#9facbd;text-align:right}
+    .address{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.06);font-size:11.5px;color:#9facbd;line-height:1.45}
+    .footer{text-align:center;font-size:10px;color:#708199;margin-top:18px}
+    .footer b{color:#96a5b8}
+    @media(max-width:430px){
+      .wrap{margin-top:18px}
+      .profile{padding-left:15px;padding-right:15px}
+      .logo{width:92%;margin-top:-58px}
+      h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="phone">
+      <div class="cover"></div>
+      <div class="profile">
+        <div class="logo"><img src="rg-net-computers-logo.webp" alt="RG NET Computers logo"></div>
+        <h1>RG NET Computers</h1>
+        <div class="loc">14 Mt. Druitt Rd · Mt. Druitt NSW 2770</div>
+        <p class="tagline">Computer support, repairs, gaming PC services, upgrades and reliable technical help for homes and businesses.</p>
+        <div class="badge">Computer Sales · Support · Repairs</div>
+
+        <nav class="buttons" aria-label="Business links">
+          <a class="action primary" href="https://search.google.com/local/writereview?placeid=ChIJkVrbjIqaEmsRJTOaKlrK5_M" target="_blank" rel="noopener">
+            <span class="icon">★</span>
+            <span class="copy"><b>Leave a Google Review</b><span>Share your experience with RG NET Computers</span></span>
+            <span class="arrow">›</span>
+          </a>
+          <a class="action" href="https://maps.apple/p/UIxonJ78z_7Jke" target="_blank" rel="noopener">
+            <span class="icon">⌖</span>
+            <span class="copy"><b>Get Directions</b><span>Open the store location in Maps</span></span>
+            <span class="arrow">›</span>
+          </a>
+          <a class="action" href="tel:+61296772444">
+            <span class="icon">☎</span>
+            <span class="copy"><b>Contact Us</b><span>Call 02 9677 2444</span></span>
+            <span class="arrow">›</span>
+          </a>
+        </nav>
+
+        <section class="freecheck">
+          <div class="eyebrow">Free initial PC check</div>
+          <h2>Not sure what is wrong with your computer?</h2>
+          <p>Bring your PC into RG NET Computers for a free initial check to help identify the issue. Once it has been assessed, you will receive a quote before repair work goes ahead.</p>
+        </section>
+
+        <section class="section">
+          <h2>About RG NET Computers</h2>
+          <p>RG NET Computers provides practical computer support for home users, gamers and businesses. From troubleshooting and device setup to gaming PC upgrades, network security, hardware parts and virus removal, the team can help diagnose problems and recommend the right solution.</p>
+          <div class="services" aria-label="Services">
+            <span class="service">Computer Diagnostics & Support</span>
+            <span class="service">Device Setup & Installation</span>
+            <span class="service">Gaming PC Builds & Upgrades</span>
+            <span class="service">Home IT Services</span>
+            <span class="service">Network Setup & Security</span>
+            <span class="service">On-Site Computer Services</span>
+            <span class="service">PC Parts & Hardware Upgrades</span>
+            <span class="service">Virus & Malware Removal</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Opening Hours</h2>
+          <div class="hours">
+            <div class="hourrow"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div>
+            <div class="hourrow"><span>Saturday</span><span>9:00am – 1:00pm</span></div>
+            <div class="hourrow"><span>Sunday</span><span>Closed</span></div>
+          </div>
+          <div class="address">14 Mt. Druitt Rd, Mt. Druitt NSW 2770<br>Phone: 02 9677 2444</div>
+        </section>
+
+        <div class="footer">Powered by <b>TapGrowth</b></div>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/analytics.js"></script>
+</body>
+</html>
