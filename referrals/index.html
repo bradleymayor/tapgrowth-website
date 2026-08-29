@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Refer a Business | TapGrowth</title>
+<meta name="description" content="Refer an Australian business to TapGrowth and earn $25 after they become a paying customer.">
+<style>
+:root{--bg:#020814;--card:#0c1a35;--blue:#3185ff;--text:#fff;--muted:#aebbd1;--line:rgba(255,255,255,.11);--green:#52d69a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,rgba(49,133,255,.22),transparent 34%),var(--bg);color:var(--text);font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(920px,calc(100% - 32px));margin:auto}.top{border-bottom:1px solid var(--line);background:rgba(6,17,38,.94);position:sticky;top:0;z-index:10}.nav{height:66px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:25px;font-weight:950}.logo span,.blue{color:var(--blue)}.back{font-weight:800;font-size:13px}.hero{text-align:center;padding:78px 0 48px}.badge{display:inline-block;padding:7px 12px;border:1px solid rgba(49,133,255,.35);border-radius:999px;background:rgba(49,133,255,.1);color:#88bdff;font-size:11px;font-weight:900}.hero h1{font-size:clamp(40px,8vw,68px);line-height:1.02;letter-spacing:-2.5px;margin:18px 0}.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:17px}.reward{display:inline-flex;gap:8px;margin-top:18px;padding:10px 15px;background:rgba(82,214,154,.1);border:1px solid rgba(82,214,154,.28);border-radius:12px;color:#8bebbd;font-weight:900}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 38px}.step,.card{background:var(--card);border:1px solid var(--line);border-radius:18px}.step{padding:20px}.num{color:#7db5ff;font-size:11px;font-weight:950}.step b{display:block;margin:5px 0}.step p{margin:0;color:var(--muted);font-size:13px}.card{padding:25px;margin:18px 0}.card h2{font-size:27px;margin:0 0 5px}.card>p{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:6px}.full{grid-column:1/-1}label{font-size:12px;color:#c9d5e6;font-weight:800}input,select,textarea{width:100%;border:1px solid var(--line);background:#07142b;color:#fff;border-radius:11px;padding:13px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue)}textarea{min-height:90px;resize:vertical}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 19px;border:0;border-radius:11px;background:var(--blue);color:#fff;font-weight:900;cursor:pointer}.secondary{background:#132646;border:1px solid var(--line)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.linkbox{display:none;margin-top:18px;padding:16px;border-radius:13px;background:#07142b;border:1px solid rgba(49,133,255,.3)}.linkbox.show{display:block}.linkbox strong{display:block;color:#8ebfff;margin-bottom:7px}.refurl{word-break:break-all;color:#dce9f9;font-size:13px}.terms{color:#8798af;font-size:11px;margin-top:15px}.success{display:none;padding:15px;margin-bottom:18px;background:rgba(82,214,154,.1);border:1px solid rgba(82,214,154,.3);border-radius:12px;color:#9aefc7;font-weight:800}.success.show{display:block}footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0;color:#8494aa;font-size:12px}.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}.foot nav{display:flex;gap:13px;flex-wrap:wrap}@media(max-width:700px){.steps,.grid{grid-template-columns:1fr}.full{grid-column:auto}.hero{padding-top:58px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap nav"><a class="logo" href="/">Tap<span>Growth</span></a><a class="back" href="/">← Main website</a></div></nav>
+<header class="hero"><div class="wrap"><span class="badge">TAPGROWTH REFERRALS</span><h1>Refer a Business.<br><span class="blue">Earn $25.</span></h1><p>Introduce a new Australian business to TapGrowth. When they become a paying customer, you receive a $25 referral reward.</p><div class="reward">You earn $25 · They receive a free NFC review card</div></div></header>
+<main class="wrap">
+<div class="steps"><div class="step"><span class="num">STEP 01</span><b>Create your referral link</b><p>Enter your details and receive a unique link to share.</p></div><div class="step"><span class="num">STEP 02</span><b>Send it to a business</b><p>The business submits their interest using your link.</p></div><div class="step"><span class="num">STEP 03</span><b>Get rewarded</b><p>Receive $25 after their eligible purchase is confirmed.</p></div></div>
+<div id="sent" class="success">Thanks — the referral has been sent to TapGrowth. We’ll contact the business and track it using the referral code.</div>
+<section class="card">
+<h2>Get your referral link</h2><p>Your unique code stays saved on this device.</p>
+<form id="referrerForm" action="https://formsubmit.co/bradley_mayor@hotmail.com" method="POST">
+<input type="hidden" name="_subject" value="New TapGrowth Referrer Registration">
+<input type="hidden" name="_captcha" value="false"><input type="text" name="_honey" style="display:none">
+<input type="hidden" name="Referral code" id="registerCode">
+<div class="grid"><div class="field"><label for="refName">Your name</label><input id="refName" name="Referrer name" required autocomplete="name"></div><div class="field"><label for="refContact">Phone or email</label><input id="refContact" name="Referrer contact" required></div><div class="field full"><label for="pay">Preferred reward method</label><select id="pay" name="Preferred reward method"><option>Bank transfer</option><option>PayID</option><option>TapGrowth credit</option></select></div></div>
+<div class="actions"><button class="btn" type="button" id="makeLink">Create My Referral Link</button></div>
+<div class="linkbox" id="linkbox"><strong>Your referral code: <span id="codeText"></span></strong><div class="refurl" id="urlText"></div><div class="actions"><button class="btn" type="button" id="copyLink">Copy Link</button><button class="btn secondary" type="button" id="shareLink">Share</button><button class="btn secondary" type="submit">Register My Details</button></div></div>
+</form>
+</section>
+<section class="card" id="refer">
+<h2>Were you referred?</h2><p>Tell us about the business and we’ll get in touch. There is no obligation to purchase.</p>
+<form action="https://formsubmit.co/bradley_mayor@hotmail.com" method="POST">
+<input type="hidden" name="_subject" value="New TapGrowth Business Referral">
+<input type="hidden" name="_captcha" value="false"><input type="text" name="_honey" style="display:none">
+<input type="hidden" name="_next" value="https://tapgrowth.com.au/referrals/?sent=1">
+<div class="grid"><div class="field"><label for="code">Referral code</label><input id="code" name="Referral code" required></div><div class="field"><label for="business">Business name</label><input id="business" name="Business name" required></div><div class="field"><label for="person">Contact person</label><input id="person" name="Contact person" required></div><div class="field"><label for="contact">Phone or email</label><input id="contact" name="Business contact" required></div><div class="field full"><label for="interest">What are they interested in?</label><select id="interest" name="Interested in"><option>Not sure yet</option><option>Google Review Stand</option><option>Landing Page + Stand</option><option>TapGrowth Pro</option><option>NFC Keychain or Smart Card</option></select></div><div class="field full"><label for="notes">Anything else? (optional)</label><textarea id="notes" name="Notes"></textarea></div></div>
+<div class="actions"><button class="btn" type="submit">Send Business Referral</button></div>
+<p class="terms">Rewards apply to genuinely new TapGrowth leads only. The referred business must make an eligible paid purchase. Self-referrals, duplicates, cancellations and refunded purchases do not qualify. Rewards are approved and paid manually within 7 days after eligibility is confirmed.</p>
+</form>
+</section>
+</main>
+<footer><div class="wrap foot"><div>© 2026 TapGrowth · Sydney, NSW</div><nav><a href="/">Home</a><a href="/demo/standard/">Demo</a><a href="/keychains/">Keychains</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a></nav></div></footer>
+<script>
+const params=new URLSearchParams(location.search);
+let code=(params.get('ref')||localStorage.getItem('tgReferralCode')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
+function newCode(name){const clean=(name||'TAP').toUpperCase().replace(/[^A-Z]/g,'').slice(0,4)||'TAP';return clean+Math.floor(1000+Math.random()*9000)}
+function showLink(){const name=document.getElementById('refName').value.trim();const contact=document.getElementById('refContact').value.trim();if(!name||!contact){alert('Please enter your name and phone or email first.');return}if(!code)code=newCode(name);localStorage.setItem('tgReferralCode',code);document.getElementById('registerCode').value=code;document.getElementById('codeText').textContent=code;const u=location.origin+'/referrals/?ref='+encodeURIComponent(code)+'#refer';document.getElementById('urlText').textContent=u;document.getElementById('linkbox').classList.add('show')}
+document.getElementById('makeLink').onclick=showLink;
+document.getElementById('copyLink').onclick=async()=>{await navigator.clipboard.writeText(document.getElementById('urlText').textContent);document.getElementById('copyLink').textContent='Copied!'};
+document.getElementById('shareLink').onclick=async()=>{const url=document.getElementById('urlText').textContent;if(navigator.share)await navigator.share({title:'TapGrowth referral',text:'Check out TapGrowth for NFC stands, review tools and business landing pages.',url});else await navigator.clipboard.writeText(url)};
+if(code){document.getElementById('code').value=code;document.getElementById('registerCode').value=code}
+if(params.get('sent')==='1')document.getElementById('sent').classList.add('show');
+</script>
+<script src="/assets/analytics.js"></script>
+</body></html>
